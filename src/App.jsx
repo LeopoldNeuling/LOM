@@ -1,8 +1,8 @@
 import { useRef, useEffect, useState } from "react";
+import { Box, LinearProgress } from "@mui/material";
 import { canvasHeight, mobileProgressBarStyle } from "./helper/styles";
 import { isMobile } from "./helper/helperFunc";
 import Navigation from "./fragments/Navigation";
-import { Box, LinearProgress } from "@mui/material";
 import DiePraxis from "./pages/DiePraxis";
 import FuerWen from "./pages/FuerWen";
 import Kontakt from "./pages/Kontakt";

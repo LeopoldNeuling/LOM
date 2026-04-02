@@ -1,5 +1,6 @@
-import { AppBar, Box, Toolbar, Typography } from "@mui/material";
+import { AppBar, Avatar, Box, Toolbar } from "@mui/material";
 import Link from "./Link.jsx";
+import logo from "../assets/logo.png";
 import { horizontalSpaceBetweenFlex, navHeight } from "../helper/styles";
 
 export default function Navigation({ curTarget }) {
@@ -12,9 +13,13 @@ export default function Navigation({ curTarget }) {
             ...horizontalSpaceBetweenFlex,
           }}
         >
-          <Typography variant="h6" component="div" color="secondary">
-            Maria Neuling - LOM®
-          </Typography>
+          <img
+            src={logo}
+            style={{
+              height: "80px",
+              aspectRatio: 1,
+            }}
+          />
 
           <Box>
             <Link text="Die Praxis" scrollID="praxis" trigger={curTarget} />

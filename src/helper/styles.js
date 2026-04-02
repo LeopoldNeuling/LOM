@@ -8,7 +8,9 @@ export const horizontalSpaceBetweenFlex = {
 
 export const verticalFlex = {
   display: "flex",
+  flexDirection: "column",
   justifyContent: "center",
+  alignItems: "center",
 };
 
 export const navHeight = {
@@ -26,7 +28,6 @@ export const NavItemMargin = {
 export const pageStyle = {
   height: "800px",
   width: "100%",
-  textAlign: "center",
   scrollMarginTop: "10vh",
 };
 
