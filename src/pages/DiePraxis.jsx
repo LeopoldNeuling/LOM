@@ -1,5 +1,5 @@
 import { Box } from "@mui/material";
-import { firstPageMarginTop, pageStyle } from "../../styles";
+import { firstPageMarginTop, pageStyle } from "../helper/styles";
 
 export default function DiePraxis({ myRef }) {
   return (

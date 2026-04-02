@@ -1,5 +1,5 @@
 import { Typography, Button } from "@mui/material";
-import { NavItemMargin } from "../../styles";
+import { NavItemMargin } from "../helper/styles";
 
 export default function Link({ text, scrollID, trigger }) {
   function scroll() {

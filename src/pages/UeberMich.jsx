@@ -1,5 +1,5 @@
 import { Box } from "@mui/material";
-import { pageStyle } from "../../styles";
+import { pageStyle } from "../helper/styles";
 
 export default function UeberMich({ myRef }) {
   return (

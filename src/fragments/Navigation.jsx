@@ -1,6 +1,6 @@
 import { AppBar, Box, Toolbar, Typography } from "@mui/material";
 import Link from "./Link.jsx";
-import { horizontalSpaceBetweenFlex, navHeight } from "../../styles";
+import { horizontalSpaceBetweenFlex, navHeight } from "../helper/styles";
 
 export default function Navigation({ curTarget }) {
   return (

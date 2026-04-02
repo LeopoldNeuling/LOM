@@ -1,3 +1,5 @@
+import { isMobile } from "./helperFunc";
+
 export const horizontalSpaceBetweenFlex = {
   display: "flex",
   justifyContent: "space-between",
@@ -29,5 +31,7 @@ export const pageStyle = {
 };
 
 export const firstPageMarginTop = {
-  marginTop: "10vh",
+  marginTop: !isMobile() ? "10vh" : 0,
 };
+
+export const mobileProgressBarStyle = { position: "sticky", top: 0 };
