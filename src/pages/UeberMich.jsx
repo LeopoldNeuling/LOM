@@ -5,6 +5,7 @@ import {
   Typography,
   IconButton,
   CardMedia,
+  LinearProgress,
 } from "@mui/material";
 import {
   FormatQuote,
@@ -15,13 +16,14 @@ import {
   VolumeUp,
 } from "@mui/icons-material";
 import { pageStyle } from "../helper/styles";
-import fotoMama from "../assets/fotoMama.jpeg";
+import fotoMama from "../assets/fotoMama2.jpg";
 import introAudio from "../assets/audios/intro.m4a";
 import { useEffect, useRef, useState } from "react";
 
 export default function UeberMich({ myRef }) {
   const audioRef = useRef(null);
   const [playing, setPlaying] = useState(false);
+  const [progress, setProgress] = useState(0);
   const [muted, setMuted] = useState(false);
 
   const playAudio = () => {
@@ -37,6 +39,17 @@ export default function UeberMich({ myRef }) {
     audioRef.current.currentTime = 0;
   };
   const toggleMute = () => setMuted((prev) => !prev);
+  const getAudioProgress = () => {
+    const audio = audioRef.current;
+    const percent = (audio.currentTime / audio.duration) * 100;
+    setProgress(percent);
+  };
+
+  useEffect(() => {
+    const audio = audioRef.current;
+    audio.addEventListener("ended", toStartAudio);
+    return () => audio.removeEventListener("ended", toStartAudio);
+  }, []);
   useEffect(() => {
     audioRef.current.muted = muted;
   }, [muted]);
@@ -72,7 +85,9 @@ export default function UeberMich({ myRef }) {
           </li>
           <li>
             10/2018 – 06/2021: Ergotherapeutin (B.Sc.) Ambulante Arbeitstherapie
-            am Anderen Ort, Sankt Hedwigs Krankenhaus, Berlin
+            am Anderen Ort,
+            <br />
+            St. Hedwig Krankenhaus, Berlin
           </li>
           <li>
             08/2021-04/2023: Ergotherapeutin Berufliches Trainingszentrum im
@@ -81,10 +96,12 @@ export default function UeberMich({ myRef }) {
           <li>
             Seit 04/2023: Klinische Ergotherapeutin Psychiatrische
             Institutsambulanz (PIA), Stationsäquivalente Behandlung (StäB) und
-            TK-E, Theodor-Wenzel-Werk e.V.
+            TK-E, Theodor-Wenzel-Werk e.V. Berlin
           </li>
-          Berlin 09/2023-03/25: Ausbildung Lösungsorientierte Maltherapie LOM®
-          (May Carro Cabaiero und Cora Egger)
+          <li>
+            09/2023-03/25: Ausbildung Lösungsorientierte Maltherapie LOM® (May
+            Carro Cabaiero und Cora Egger)
+          </li>
           <li>
             Seit 03/2026: Gründung Praxis für Ergotherapie und
             Lösungsorientiertes
@@ -112,6 +129,12 @@ export default function UeberMich({ myRef }) {
               Maria Neuling
             </Typography>
           </CardContent>
+          <LinearProgress
+            variant="determinate"
+            value={progress}
+            sx={{ marginInline: "2vh" }}
+            color="info"
+          />
           <Box
             sx={{
               display: "flex",
@@ -144,7 +167,11 @@ export default function UeberMich({ myRef }) {
               )}
             </IconButton>
 
-            <audio src={introAudio} ref={audioRef} />
+            <audio
+              src={introAudio}
+              ref={audioRef}
+              onTimeUpdate={getAudioProgress}
+            />
           </Box>
         </Box>
         <CardMedia component="img" sx={{ width: 151 }} image={fotoMama} />

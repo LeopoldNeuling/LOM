@@ -1,7 +1,7 @@
 import { Box, Typography } from "@mui/material";
 import { AlternateEmail, LocationPin, Phone } from "@mui/icons-material";
+import { Link } from "react-router-dom";
 import { pageStyle } from "../helper/styles";
-import hills from "../assets/hills.jpg";
 import praxis from "../assets/roster/foto12.jpeg";
 
 export default function Kontakt({ myRef }) {
@@ -10,6 +10,7 @@ export default function Kontakt({ myRef }) {
       ref={myRef}
       id="contact"
       sx={{
+        position: "relative",
         ...pageStyle,
         backgroundImage: `linear-gradient(rgba(255,255,255,0.5), rgba(255,255,255,0.5)), url(${praxis})`,
         backgroundSize: "cover",
@@ -81,6 +82,30 @@ export default function Kontakt({ myRef }) {
             <b>info@ergo-lom.de</b>
             <AlternateEmail fontSize="small" />
           </a>
+        </Typography>
+      </Box>
+      <Box
+        sx={{
+          position: "absolute",
+          bottom: 0,
+          right: 0,
+          width: 500,
+          padding: "2vh",
+          margin: "10vh 15vh",
+          background: "rgba(0,0,0,0.25)",
+          display: "grid",
+          placeItems: "center",
+
+          borderRadius: "5px",
+        }}
+      >
+        <Typography
+          variant="subtitle1"
+          color="primary.main"
+          sx={{ "&>*": { color: "inherit" } }}
+        >
+          <Link to="/impressum">Impressum</Link> |{" "}
+          <Link to="/daten">Datenschutzerklärung</Link>
         </Typography>
       </Box>
     </Box>

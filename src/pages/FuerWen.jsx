@@ -43,13 +43,21 @@ export default function FuerWen({ myRef }) {
                 color="secondary.main"
                 textAlign="left"
               >
-                Im Rahmen der Ergotherapie werden die Behandlungskosten von den
-                gesetzlichen und privaten Krankenkassen übernommen.
-                Voraussetzung ist eine ärztliche oder psychotherapeutische
-                Heilmittelverordnung für die Ergotherapie
-                (psychisch-funktionelles Behandlungsgebiet). Psychiater:innen,
-                Neurolog:innen, Hausärzt:innen sowie Psychotherapeut:innen
-                können dieses Heilmittel verordnen.
+                <ul>
+                  <li>
+                    Im Rahmen der Ergotherapie werden die Behandlungskosten von
+                    den gesetzlichen und privaten Krankenkassen übernommen.
+                  </li>
+                  <li>
+                    Voraussetzung ist eine ärztliche oder psychotherapeutische
+                    Heilmittelverordnung für die Ergotherapie
+                    (psychisch-funktionelles Behandlungsgebiet).
+                  </li>
+                  <li>
+                    Psychiater:innen, Neurolog:innen, Hausärzt:innen sowie
+                    Psychotherapeut:innen können dieses Heilmittel verordnen.
+                  </li>
+                </ul>
               </Typography>
             </CardContent>
           </CardActionArea>
