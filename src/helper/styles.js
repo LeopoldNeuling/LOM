@@ -13,20 +13,22 @@ export const verticalFlex = {
   alignItems: "center",
 };
 
+// navbar
 export const navHeight = {
   height: "10vh",
-};
-
-export const canvasHeight = {
-  minHeight: "90vh",
 };
 
 export const NavItemMargin = {
   marginLeft: "10px",
 };
 
+export const canvasHeight = {
+  minHeight: "90vh",
+};
+
 export const pageStyle = {
-  height: "800px",
+  minHeight: "400px",
+  maxHeight: "800px",
   width: "100%",
   scrollMarginTop: "10vh",
 };

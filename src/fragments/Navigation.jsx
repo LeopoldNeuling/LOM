@@ -29,7 +29,6 @@ export default function Navigation({ curTarget }) {
               trigger={curTarget}
             />
             <Link text="Über mich" scrollID="ueberMich" trigger={curTarget} />
-            <Link text="Themen" scrollID="themen" trigger={curTarget} />
             <Link text="Für Wen?" scrollID="fuerWen" trigger={curTarget} />
             <Link
               text="Kontakt und Lage"

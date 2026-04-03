@@ -1,12 +1,11 @@
 import { useRef, useEffect, useState } from "react";
-import { Box, LinearProgress } from "@mui/material";
+import { Box, LinearProgress, Divider } from "@mui/material";
 import { canvasHeight, mobileProgressBarStyle } from "./helper/styles";
 import { isMobile } from "./helper/helperFunc";
 import Navigation from "./fragments/Navigation";
 import DiePraxis from "./pages/DiePraxis";
 import FuerWen from "./pages/FuerWen";
 import Kontakt from "./pages/Kontakt";
-import Themen from "./pages/Themen";
 import UeberMich from "./pages/UeberMich";
 import WasIstLom from "./pages/WasIstLom";
 
@@ -15,7 +14,6 @@ export default function App() {
     praxis: useRef(),
     lom: useRef(),
     about: useRef(),
-    topics: useRef(),
     audience: useRef(),
     contact: useRef(),
   };
@@ -82,8 +80,9 @@ export default function App() {
       >
         <DiePraxis myRef={refs.praxis} />
         <WasIstLom myRef={refs.lom} />
+        <Divider />
         <UeberMich myRef={refs.about} />
-        <Themen myRef={refs.topics} />
+        <Divider />
         <FuerWen myRef={refs.audience} />
         <Kontakt myRef={refs.contact} />
       </Box>
