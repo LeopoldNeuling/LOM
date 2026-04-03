@@ -6,7 +6,14 @@ import {
   IconButton,
   CardMedia,
 } from "@mui/material";
-import { FormatQuote, PlayArrow, Pause } from "@mui/icons-material";
+import {
+  FormatQuote,
+  PlayArrow,
+  Pause,
+  SkipPrevious,
+  VolumeOff,
+  VolumeUp,
+} from "@mui/icons-material";
 import { pageStyle } from "../helper/styles";
 import fotoMama from "../assets/fotoMama.jpeg";
 import introAudio from "../assets/audios/intro.m4a";
@@ -15,13 +22,24 @@ import { useEffect, useRef, useState } from "react";
 export default function UeberMich({ myRef }) {
   const audioRef = useRef(null);
   const [playing, setPlaying] = useState(false);
+  const [muted, setMuted] = useState(false);
+
+  const playAudio = () => {
+    audioRef.current.play();
+    setPlaying(true);
+  };
+  const pauseAudio = () => {
+    audioRef.current.pause();
+    setPlaying(false);
+  };
+  const toStartAudio = () => {
+    pauseAudio();
+    audioRef.current.currentTime = 0;
+  };
+  const toggleMute = () => setMuted((prev) => !prev);
   useEffect(() => {
-    if (playing) audioRef.current.play();
-    else {
-      audioRef.current.pause();
-      audioRef.current.currentTime = 0;
-    }
-  }, [playing]);
+    audioRef.current.muted = muted;
+  }, [muted]);
 
   return (
     <Box
@@ -96,22 +114,36 @@ export default function UeberMich({ myRef }) {
           </CardContent>
           <Box
             sx={{
-              display: "grid",
-              placeItems: "center",
+              display: "flex",
+              flexDirection: "row",
+              justifyContent: "space-evenly",
             }}
           >
+            <IconButton onClick={toStartAudio}>
+              <SkipPrevious fontSize="large" />
+            </IconButton>
+
             <IconButton
-              aria-label="play/pause"
+              color={playing ? "info" : "default"}
               onClick={() => {
-                setPlaying((prev) => !prev);
+                playing ? pauseAudio() : playAudio();
               }}
             >
               {playing ? (
-                <Pause sx={{ height: 38, width: 38 }} />
+                <Pause fontSize="large" />
               ) : (
-                <PlayArrow sx={{ height: 38, width: 38 }} />
+                <PlayArrow fontSize="large" />
               )}
             </IconButton>
+
+            <IconButton onClick={toggleMute} color={muted ? "default" : "info"}>
+              {muted ? (
+                <VolumeOff fontSize="large" />
+              ) : (
+                <VolumeUp fontSize="large" />
+              )}
+            </IconButton>
+
             <audio src={introAudio} ref={audioRef} />
           </Box>
         </Box>

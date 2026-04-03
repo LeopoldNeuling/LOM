@@ -1,15 +1,11 @@
-import {
-  Accordion,
-  AccordionDetails,
-  AccordionSummary,
-  Box,
-  Typography,
-} from "@mui/material";
+import { Box, Card, CardContent, Typography } from "@mui/material";
 import { firstPageMarginTop, pageStyle } from "../helper/styles";
 import { isMobile } from "../helper/helperFunc";
 import meer from "../assets/meer.png";
 
 export default function DiePraxis({ myRef }) {
+  const cardOpacity = 0.75;
+
   return (
     <Box
       ref={myRef}
@@ -22,16 +18,17 @@ export default function DiePraxis({ myRef }) {
         backgroundPosition: "center",
 
         textAlign: "center",
-        display: "grid",
-        placeItems: "center",
-        gridTemplateColumns: "1fr",
-        gridTemplateRows: "repeat(6, 1fr)",
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "center",
+        alignItems: "space-between",
+        gap: "15vh",
+        height: "800px",
       }}
     >
       <Typography
         variant={isMobile() ? "h4" : "h3"}
         color="primary.contrastText"
-        sx={{ gridArea: "2/1" }}
       >
         <b>
           Willkommen in der
@@ -41,47 +38,64 @@ export default function DiePraxis({ myRef }) {
         </b>
       </Typography>
 
-      <Box>
-        <Accordion>
-          <AccordionSummary>hallo</AccordionSummary>
-          <AccordionDetails>
-            Das Angebot der Praxis für Ergotherapie und LOM® richtet sich
-            speziell an Menschen mit psychischen und psychosomatischen
-            Belastungsfaktoren.
-          </AccordionDetails>
-        </Accordion>
-
-        <Accordion>
-          <AccordionSummary>hallo</AccordionSummary>
-          <AccordionDetails>
-            Ein besonderer Schwerpunkt liegt auf nonverbalen Therapieverfahren
-            wie dem Lösungsorientierten Malen (LOM®).
-          </AccordionDetails>
-        </Accordion>
-
-        <Accordion>
-          <AccordionSummary>hallo</AccordionSummary>
-          <AccordionDetails>
-            Die Praxis befindet sich in Berlin Zehlendorf. Hier biete ich
-            psychisch-funktionelle Behandlungen für gesetzlich und privat
-            krankenversicherte Personen an.
-          </AccordionDetails>
-        </Accordion>
-      </Box>
-
-      {/* <Typography
-        variant={isMobile() ? "h4" : "h5"}
-        color="secondary.contrastText"
+      <Box
         sx={{
-          gridArea: "5/1",
-          margin: "0 20vh",
-          textAlign: "left",
-          backgroundColor: "rgba(0,0,0,0.1)",
-          borderRadius: "10px",
-          padding: "20px",
+          display: "flex",
+          flexDirection: "row",
+          justifyContent: "space-evenly",
+          alignItems: "flex-start",
         }}
       >
-      </Typography> */}
+        <Card
+          sx={{
+            maxWidth: 300,
+            backgroundColor: `rgba(53,86,111,${cardOpacity})`,
+          }}
+        >
+          <CardContent>
+            <Typography variant="subtitle1" color="primary.main">
+              <b>
+                Das Angebot der Praxis für Ergotherapie und LOM® richtet sich
+                speziell an Menschen mit psychischen und psychosomatischen
+                Belastungsfaktoren.
+              </b>
+            </Typography>
+          </CardContent>
+        </Card>
+
+        <Card
+          sx={{
+            maxWidth: 300,
+            backgroundColor: `rgba(208,138,33,${cardOpacity})`,
+          }}
+        >
+          <CardContent>
+            <Typography variant="subtitle1" color="primary.main">
+              <b>
+                Ein besonderer Schwerpunkt liegt auf nonverbalen
+                Therapieverfahren wie dem Lösungsorientierten Malen (LOM®).
+              </b>
+            </Typography>
+          </CardContent>
+        </Card>
+
+        <Card
+          sx={{
+            maxWidth: 300,
+            backgroundColor: `rgba(201,176,191,${cardOpacity + 0.1})`,
+          }}
+        >
+          <CardContent>
+            <Typography variant="subtitle1" color="primary.main">
+              <b>
+                Die Praxis befindet sich in Berlin Zehlendorf. Hier biete ich
+                psychisch-funktionelle Behandlungen für gesetzlich und privat
+                krankenversicherte Personen an.
+              </b>
+            </Typography>
+          </CardContent>
+        </Card>
+      </Box>
     </Box>
   );
 }
