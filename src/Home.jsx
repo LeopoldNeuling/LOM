@@ -1,7 +1,5 @@
 import { useRef, useEffect, useState } from "react";
-import { Box, LinearProgress, Divider } from "@mui/material";
-import { canvasHeight, mobileProgressBarStyle } from "./helper/styles";
-import { isMobile } from "./helper/helperFunc";
+import { Box, Divider } from "@mui/material";
 import Navigation from "./fragments/Navigation";
 import DiePraxis from "./pages/DiePraxis";
 import FuerWen from "./pages/FuerWen";
@@ -18,9 +16,8 @@ export default function Home() {
     contact: useRef(),
   };
   const [target, setTarget] = useState("praxis");
-  const [scrollProgress, setScrollProgress] = useState(0);
 
-  // scrolling outline
+  // scrolling beahviour
   function applyObserver(entries) {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
@@ -43,39 +40,14 @@ export default function Home() {
     return () => observer.disconnect();
   }, []);
 
-  // scrolling behaviour
-  useEffect(() => {
-    const handleScroll = () => {
-      const scrollTop = window.scrollY;
-      const docHeight =
-        document.documentElement.scrollHeight - window.innerHeight;
-      let progress = (scrollTop / docHeight) * 100;
-
-      if (progress < 0) progress = 0;
-      else if (progress > 100) progress = 100;
-      setScrollProgress(progress);
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
   return (
     <>
-      {!isMobile() ? (
-        <Navigation curTarget={target} />
-      ) : (
-        <LinearProgress
-          value={scrollProgress}
-          color="secondary"
-          variant="determinate"
-          sx={{ ...mobileProgressBarStyle }}
-        />
-      )}
+      <Navigation curTarget={target} />
+
       <Box
         sx={{
           backgroundColor: "primary.main",
-          ...canvasHeight,
+          minHeight: "90vh",
         }}
       >
         <DiePraxis myRef={refs.praxis} />

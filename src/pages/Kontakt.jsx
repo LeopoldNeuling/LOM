@@ -1,7 +1,6 @@
+import { Link } from "react-router-dom";
 import { Box, Typography } from "@mui/material";
 import { AlternateEmail, LocationPin, Phone } from "@mui/icons-material";
-import { Link } from "react-router-dom";
-import { pageStyle } from "../helper/styles";
 import praxis from "../assets/roster/foto12.jpeg";
 
 export default function Kontakt({ myRef }) {
@@ -9,17 +8,12 @@ export default function Kontakt({ myRef }) {
     <Box
       ref={myRef}
       id="contact"
+      className="page wrapper-page bg-image row-flex"
       sx={{
         position: "relative",
-        ...pageStyle,
         backgroundImage: `linear-gradient(rgba(255,255,255,0.5), rgba(255,255,255,0.5)), url(${praxis})`,
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-        height: "800px",
         padding: "10vh 15vh",
 
-        display: "flex",
-        flexDirection: "row",
         justifyContent: "flex-start",
         alignItems: "flex-end",
       }}

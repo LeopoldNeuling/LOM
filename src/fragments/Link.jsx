@@ -1,5 +1,4 @@
 import { Typography, Button } from "@mui/material";
-import { NavItemMargin } from "../helper/styles";
 
 export default function Link({ text, scrollID, trigger }) {
   function scroll() {
@@ -9,7 +8,7 @@ export default function Link({ text, scrollID, trigger }) {
   return (
     <Button
       variant={trigger == scrollID ? "contained" : "outlined"}
-      sx={{ ...NavItemMargin }}
+      sx={{ marginLeft: "10px" }}
       onClick={scroll}
     >
       <Typography variant="subtitle1" component="div" sx={{ flexGrow: 1 }}>

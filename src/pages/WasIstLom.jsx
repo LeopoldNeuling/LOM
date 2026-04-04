@@ -1,70 +1,41 @@
 import { Box, ImageList, ImageListItem, Typography } from "@mui/material";
-import { pageStyle } from "../helper/styles";
 import foto1 from "../assets/roster/foto1.jpeg";
 import foto2 from "../assets/roster/foto2.jpeg";
 import foto3 from "../assets/roster/foto3.jpeg";
 import foto4 from "../assets/roster/foto4.jpeg";
-import foto5 from "../assets/roster/foto9.jpg";
+import foto5 from "../assets/roster/foto5.jpeg";
 import foto6 from "../assets/roster/foto6.jpeg";
-import foto7 from "../assets/roster/foto5.jpeg";
+import foto7 from "../assets/roster/foto7.jpg";
 import foto8 from "../assets/roster/foto8.jpg";
-import foto9 from "../assets/roster/foto7.jpg";
+import foto9 from "../assets/roster/foto9.jpg";
 import foto10 from "../assets/roster/foto10.jpg";
 import foto11 from "../assets/roster/foto11.jpg";
 import foto12 from "../assets/roster/foto12.jpeg";
 
 export default function WasIstLom({ myRef }) {
   const itemData = [
-    {
-      img: foto1,
-    },
-    {
-      img: foto2,
-    },
-    {
-      img: foto3,
-    },
-    {
-      img: foto4,
-    },
-    {
-      img: foto5,
-    },
-    {
-      img: foto6,
-    },
-    {
-      img: foto7,
-    },
-    {
-      img: foto8,
-    },
-    {
-      img: foto9,
-    },
-    {
-      img: foto10,
-    },
-    {
-      img: foto11,
-    },
-    {
-      img: foto12,
-    },
+    foto1,
+    foto2,
+    foto3,
+    foto4,
+    foto9,
+    foto6,
+    foto5,
+    foto8,
+    foto7,
+    foto10,
+    foto11,
+    foto12,
   ];
 
   return (
     <Box
       ref={myRef}
       id="wasIstLom"
+      className="page content-page row-flex"
       sx={{
-        ...pageStyle,
-        width: "95%",
-        display: "flex",
-        flexDirection: "row",
         justifyContent: "space-evenly",
         alignItems: "center",
-        margin: "5vh",
       }}
     >
       <Box>
@@ -74,10 +45,10 @@ export default function WasIstLom({ myRef }) {
 
         <ImageList sx={{ width: 700, height: 500 }} cols={4} rowHeight={164}>
           {itemData.map((item) => (
-            <ImageListItem key={item.img}>
+            <ImageListItem key={item}>
               <img
-                srcSet={`${item.img}?w=164&h=164&fit=crop&auto=format&dpr=2 2x`}
-                src={`${item.img}?w=164&h=164&fit=crop&auto=format`}
+                srcSet={`${item}?w=164&h=164&fit=crop&auto=format&dpr=2 2x`}
+                src={`${item}?w=164&h=164&fit=crop&auto=format`}
                 loading="lazy"
               />
             </ImageListItem>

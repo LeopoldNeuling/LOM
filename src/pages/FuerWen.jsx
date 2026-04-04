@@ -6,7 +6,6 @@ import {
   CardActionArea,
   Typography,
 } from "@mui/material";
-import { pageStyle } from "../helper/styles";
 import quad from "../assets/furWenSeite/quad.jpg";
 import tri from "../assets/furWenSeite/tri.jpg";
 import circle from "../assets/furWenSeite/circle.jpg";
@@ -16,12 +15,7 @@ export default function FuerWen({ myRef }) {
     <Box
       ref={myRef}
       id="fuerWen"
-      sx={{
-        ...pageStyle,
-        width: "95%",
-        margin: "5vh",
-        textAlign: "center",
-      }}
+      className="page content-page text-align-center"
     >
       <Typography color="secondary.main" variant="h2" gutterBottom>
         Für wen?

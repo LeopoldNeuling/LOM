@@ -1,3 +1,4 @@
+import { useEffect, useRef, useState } from "react";
 import {
   Box,
   Card,
@@ -15,10 +16,8 @@ import {
   VolumeOff,
   VolumeUp,
 } from "@mui/icons-material";
-import { pageStyle } from "../helper/styles";
 import fotoMama from "../assets/fotoMama2.jpg";
 import introAudio from "../assets/audios/intro.m4a";
-import { useEffect, useRef, useState } from "react";
 
 export default function UeberMich({ myRef }) {
   const audioRef = useRef(null);
@@ -58,14 +57,10 @@ export default function UeberMich({ myRef }) {
     <Box
       ref={myRef}
       id="ueberMich"
+      className="page content-page place-center-grid"
       sx={{
-        ...pageStyle,
-        width: "95%",
-        display: "grid",
-        placeItems: "center",
         gridTemplateColumns: "1fr 1fr 1fr",
         gridTemplateRows: "1fr 5fr",
-        margin: "5vh",
       }}
     >
       <Typography color="secondary.main" variant="h2" sx={{ gridArea: "1/2" }}>

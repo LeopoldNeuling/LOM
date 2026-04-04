@@ -1,16 +1,17 @@
-import { AppBar, Avatar, Box, Toolbar } from "@mui/material";
+import { AppBar, Box, Toolbar } from "@mui/material";
 import Link from "./Link.jsx";
 import logo from "../assets/logo.png";
-import { horizontalSpaceBetweenFlex, navHeight } from "../helper/styles";
 
 export default function Navigation({ curTarget }) {
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="fixed">
         <Toolbar
+          className="row-flex"
           sx={{
-            ...navHeight,
-            ...horizontalSpaceBetweenFlex,
+            height: "10vh",
+            justifyContent: "space-between",
+            alignItems: "center",
           }}
         >
           <img

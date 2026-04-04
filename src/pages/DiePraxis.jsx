@@ -1,6 +1,4 @@
 import { Box, Card, CardContent, Typography } from "@mui/material";
-import { firstPageMarginTop, pageStyle } from "../helper/styles";
-import { isMobile } from "../helper/helperFunc";
 import meer from "../assets/meer.png";
 
 export default function DiePraxis({ myRef }) {
@@ -10,26 +8,17 @@ export default function DiePraxis({ myRef }) {
     <Box
       ref={myRef}
       id="praxis"
+      className="page wrapper-page column-flex text-align-center bg-image"
       sx={{
-        ...pageStyle,
-        ...firstPageMarginTop,
-        backgroundImage: `linear-gradient(rgba(255,255,255,0.25), rgba(255,255,255,0.25)), url(${meer})`,
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-
-        textAlign: "center",
-        display: "flex",
-        flexDirection: "column",
         justifyContent: "center",
         alignItems: "space-between",
         gap: "15vh",
-        height: "800px",
+
+        backgroundImage: `linear-gradient(rgba(255,255,255,0.25), rgba(255,255,255,0.25)), url(${meer})`,
+        marginTop: "10vh",
       }}
     >
-      <Typography
-        variant={isMobile() ? "h4" : "h3"}
-        color="primary.contrastText"
-      >
+      <Typography variant="h3" color="primary.contrastText">
         <b>
           Willkommen in der
           <br /> Praxis für Ergotherapie

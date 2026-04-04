@@ -1,8 +1,8 @@
 import { createRoot } from "react-dom/client";
-import "./index.css";
-import App from "./App.jsx";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 import CssBaseline from "@mui/material/CssBaseline";
+import App from "./App.jsx";
+import "./index.css";
 
 const theme = createTheme({
   palette: {
