@@ -1,4 +1,6 @@
 import { Box, ImageList, ImageListItem, Typography } from "@mui/material";
+import { isMobile } from "../helper/helperFunc";
+import { darkCol } from "../main";
 import foto1 from "../assets/roster/foto1.jpeg";
 import foto2 from "../assets/roster/foto2.jpeg";
 import foto3 from "../assets/roster/foto3.jpeg";
@@ -32,18 +34,38 @@ export default function WasIstLom({ myRef }) {
     <Box
       ref={myRef}
       id="wasIstLom"
-      className="page content-page row-flex"
+      className={
+        isMobile() ? "mobile-page mobile-content-page" : "page content-page"
+      }
       sx={{
         justifyContent: "space-evenly",
         alignItems: "center",
       }}
     >
       <Box>
-        <Typography color="secondary.main" variant="h2">
+        <Typography color="secondary.main" variant={isMobile ? "h3" : "h2"}>
           Was ist LOM?
         </Typography>
 
-        <ImageList sx={{ width: 700, height: 500 }} cols={4} rowHeight={164}>
+        <ImageList
+          sx={{
+            width: isMobile() ? "80vw" : "50vw",
+            height: "60vh",
+            overscrollBehavior: "contain",
+            "&::-webkit-scrollbar": {
+              width: "10px",
+            },
+            "&::-webkit-scrollbar-track": {
+              background: "primary.main",
+            },
+            "&::-webkit-scrollbar-thumb": {
+              background: darkCol,
+              borderRadius: "10px",
+            },
+          }}
+          cols={isMobile() ? 3 : 4}
+          rowHeight={164}
+        >
           {itemData.map((item) => (
             <ImageListItem key={item}>
               <img
@@ -56,7 +78,11 @@ export default function WasIstLom({ myRef }) {
         </ImageList>
       </Box>
 
-      <Typography variant="subtitle" color="secondary.main" maxWidth={400}>
+      <Typography
+        variant="subtitle"
+        color="secondary.main"
+        maxWidth={isMobile() ? "80vw" : "30vw"}
+      >
         LOM® fördert die seelische Gesundheit, indem es sich günstig auf
         Stresslevel und Belastungen durch negative Emotionen auswirkt. Neue
         Perspektiven auf festgefahrene, scheinbar „unlösbare“ Probleme werden

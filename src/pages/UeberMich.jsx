@@ -67,11 +67,7 @@ export default function UeberMich({ myRef }) {
         Über mich
       </Typography>
 
-      <Typography
-        variant="subtitle1"
-        color="secondary.main"
-        sx={{ gridRow: 2 }}
-      >
+      <Typography color="secondary.main" variant="" sx={{ gridRow: 2 }}>
         <h4>Lebenslauf</h4>
         <ul>
           <li>
@@ -172,11 +168,7 @@ export default function UeberMich({ myRef }) {
         <CardMedia component="img" sx={{ width: 151 }} image={fotoMama} />
       </Card>
 
-      <Typography
-        variant="subtitle1"
-        color="secondary.main"
-        sx={{ gridRow: 2 }}
-      >
+      <Typography color="secondary.main" sx={{ gridRow: 2 }}>
         <h4>Fortbildungen</h4>
         <ul>
           <li>

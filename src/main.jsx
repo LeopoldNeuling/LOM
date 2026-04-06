@@ -4,14 +4,16 @@ import CssBaseline from "@mui/material/CssBaseline";
 import App from "./App.jsx";
 import "./index.css";
 
+export const darkCol = "#2e3f4e";
+
 const theme = createTheme({
   palette: {
     primary: {
       main: "#f4f1ec",
-      contrastText: "#2e3f4e",
+      contrastText: darkCol,
     },
     secondary: {
-      main: "#2e3f4e",
+      main: darkCol,
       contrastText: "#f4f1ec",
     },
   },

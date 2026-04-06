@@ -1,5 +1,6 @@
 import { Box, Card, CardContent, Typography } from "@mui/material";
 import meer from "../assets/meer.png";
+import { isMobile } from "../helper/helperFunc";
 
 export default function DiePraxis({ myRef }) {
   const cardOpacity = 0.75;
@@ -8,36 +9,52 @@ export default function DiePraxis({ myRef }) {
     <Box
       ref={myRef}
       id="praxis"
-      className="page wrapper-page column-flex text-align-center bg-image"
+      className={`${isMobile() ? "mobile-page" : "page wrapper-page"} column-flex text-align-center bg-image`}
       sx={{
         justifyContent: "center",
         alignItems: "space-between",
         gap: "15vh",
 
         backgroundImage: `linear-gradient(rgba(255,255,255,0.25), rgba(255,255,255,0.25)), url(${meer})`,
-        marginTop: "10vh",
+        marginTop: isMobile() ? 0 : "10vh",
+        paddingTop: isMobile() ? "5vh" : 0,
       }}
     >
-      <Typography variant="h3" color="primary.contrastText">
-        <b>
-          Willkommen in der
-          <br /> Praxis für Ergotherapie
-          <br />
-          und Lösungsorientiertes Malen®
-        </b>
+      <Typography
+        variant={isMobile() ? "h4" : "h3"}
+        color="primary.contrastText"
+      >
+        {isMobile() ? (
+          <b>
+            Willkommen in der Praxis für
+            <br />
+            Ergotherapie und Lösungsorientiertes Malen®
+          </b>
+        ) : (
+          <b>
+            Willkommen in der
+            <br />
+            Praxis für Ergotherapie
+            <br />
+            und Lösungsorientiertes Malen®
+          </b>
+        )}
       </Typography>
 
       <Box
         sx={{
           display: "flex",
-          flexDirection: "row",
+          flexDirection: isMobile() ? "column" : "row",
           justifyContent: "space-evenly",
           alignItems: "flex-start",
+          gap: "2vh",
+          "&>*": {
+            maxWidth: isMobile() ? "100%" : "300px",
+          },
         }}
       >
         <Card
           sx={{
-            maxWidth: 300,
             backgroundColor: `rgba(53,86,111,${cardOpacity})`,
           }}
         >
@@ -54,7 +71,6 @@ export default function DiePraxis({ myRef }) {
 
         <Card
           sx={{
-            maxWidth: 300,
             backgroundColor: `rgba(208,138,33,${cardOpacity})`,
           }}
         >
@@ -70,7 +86,6 @@ export default function DiePraxis({ myRef }) {
 
         <Card
           sx={{
-            maxWidth: 300,
             backgroundColor: `rgba(201,176,191,${cardOpacity + 0.1})`,
           }}
         >

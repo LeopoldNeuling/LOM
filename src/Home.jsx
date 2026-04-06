@@ -6,6 +6,7 @@ import FuerWen from "./pages/FuerWen";
 import Kontakt from "./pages/Kontakt";
 import UeberMich from "./pages/UeberMich";
 import WasIstLom from "./pages/WasIstLom";
+import { isMobile } from "./helper/helperFunc";
 
 export default function Home() {
   const refs = {
@@ -42,7 +43,7 @@ export default function Home() {
 
   return (
     <>
-      <Navigation curTarget={target} />
+      {!isMobile() && <Navigation curTarget={target} />}
 
       <Box
         sx={{
