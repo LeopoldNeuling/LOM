@@ -1,4 +1,14 @@
-import { Box, ImageList, ImageListItem, Typography } from "@mui/material";
+import { useState, Fragment } from "react";
+import {
+  Box,
+  ImageList,
+  ImageListItem,
+  Typography,
+  Button,
+  Dialog,
+  DialogActions,
+  DialogContent,
+} from "@mui/material";
 import { isMobile } from "../helper/helperFunc";
 import { darkCol } from "../main";
 import foto1 from "../assets/roster/foto1.jpeg";
@@ -14,22 +24,84 @@ import foto10 from "../assets/roster/foto10.jpg";
 import foto11 from "../assets/roster/foto11.jpg";
 import foto12 from "../assets/roster/foto12.jpeg";
 
-export default function WasIstLom({ myRef }) {
-  const itemData = [
-    foto1,
-    foto2,
-    foto3,
-    foto4,
-    foto9,
-    foto6,
-    foto5,
-    foto8,
-    foto7,
-    foto10,
-    foto11,
-    foto12,
-  ];
+const itemData = [
+  foto1,
+  foto2,
+  foto3,
+  foto4,
+  foto9,
+  foto6,
+  foto5,
+  foto8,
+  foto7,
+  foto10,
+  foto11,
+  foto12,
+];
 
+function Gallery() {
+  const [open, setOpen] = useState(false);
+  const [viewing, setViewing] = useState();
+  const handleClickOpen = (img) => {
+    setViewing(img);
+    setOpen(true);
+  };
+  const handleClose = () => {
+    setViewing();
+    setOpen(false);
+  };
+
+  return (
+    <>
+      <ImageList
+        gap={10}
+        sx={{
+          width: isMobile() ? "80vw" : "50vw",
+          height: "60vh",
+
+          overscrollBehavior: "contain",
+          "&::-webkit-scrollbar": {
+            width: "10px",
+          },
+          "&::-webkit-scrollbar-track": {
+            background: "primary.main",
+          },
+          "&::-webkit-scrollbar-thumb": {
+            background: darkCol,
+            borderRadius: "10px",
+          },
+        }}
+        cols={isMobile() ? 3 : 4}
+        rowHeight={164}
+      >
+        {itemData.map((item) => (
+          <ImageListItem
+            key={item}
+            onClick={() => handleClickOpen(item)}
+            sx={{ cursor: "pointer", overflow: "hidden" }}
+          >
+            <img
+              srcSet={`${item}?w=164&h=164&fit=crop&auto=format&dpr=2 2x`}
+              src={`${item}?w=164&h=164&fit=crop&auto=format`}
+            />
+          </ImageListItem>
+        ))}
+      </ImageList>
+      <Fragment>
+        <Dialog open={open} onClose={handleClose}>
+          <DialogContent>
+            <img src={viewing} width={isMobile() ? "250px" : "400px"} />
+          </DialogContent>
+          <DialogActions>
+            <Button onClick={handleClose}>Zurück</Button>
+          </DialogActions>
+        </Dialog>
+      </Fragment>
+    </>
+  );
+}
+
+export default function WasIstLom({ myRef }) {
   return (
     <Box
       ref={myRef}
@@ -38,45 +110,26 @@ export default function WasIstLom({ myRef }) {
         isMobile() ? "mobile-page mobile-content-page" : "page content-page"
       }
       sx={{
+        position: "relative",
         justifyContent: "space-evenly",
         alignItems: "center",
       }}
     >
-      <Box>
-        <Typography color="secondary.main" variant={isMobile() ? "h3" : "h2"}>
-          Was ist LOM?
-        </Typography>
-
-        <ImageList
-          sx={{
-            width: isMobile() ? "80vw" : "50vw",
-            height: "60vh",
-            overscrollBehavior: "contain",
-            "&::-webkit-scrollbar": {
-              width: "10px",
-            },
-            "&::-webkit-scrollbar-track": {
-              background: "primary.main",
-            },
-            "&::-webkit-scrollbar-thumb": {
-              background: darkCol,
-              borderRadius: "10px",
-            },
-          }}
-          cols={isMobile() ? 3 : 4}
-          rowHeight={164}
-        >
-          {itemData.map((item) => (
-            <ImageListItem key={item}>
-              <img
-                srcSet={`${item}?w=164&h=164&fit=crop&auto=format&dpr=2 2x`}
-                src={`${item}?w=164&h=164&fit=crop&auto=format`}
-                loading="lazy"
-              />
-            </ImageListItem>
-          ))}
-        </ImageList>
-      </Box>
+      {isMobile() ? (
+        <>
+          <Typography color="secondary.main" variant="h2">
+            Was ist LOM?
+          </Typography>
+          <Gallery />
+        </>
+      ) : (
+        <div>
+          <Typography color="secondary.main" variant="h2">
+            Was ist LOM?
+          </Typography>
+          <Gallery />
+        </div>
+      )}
 
       <Typography
         variant="subtitle"

@@ -24,14 +24,17 @@ import fotoMama from "../assets/fotoMama2.jpg";
 import introAudio from "../assets/audios/intro.m4a";
 import { isMobile } from "../helper/helperFunc";
 
+const mobileLebensLaufFortb = isMobile
+  ? {
+      marginInline: "5vw",
+      marginTop: "2vh",
+    }
+  : {};
+
 function Lebenslauf() {
   function Head({ children }) {
     return (
-      <Typography
-        color="secondary.main"
-        variant="h5"
-        sx={{ gridRow: 2, marginInline: "2.5vh" }}
-      >
+      <Typography color="secondary.main" variant="h5" sx={{ gridRow: 2 }}>
         Lebenslauf
         {children}
       </Typography>
@@ -73,7 +76,7 @@ function Lebenslauf() {
     );
   }
   return (
-    <div style={{ marginInline: "5vw", marginTop: "2vh" }}>
+    <div style={{ ...mobileLebensLaufFortb }}>
       {isMobile() ? (
         <Accordion>
           <AccordionSummary expandIcon={<ExpandMore />}>
@@ -94,11 +97,7 @@ function Lebenslauf() {
 function Fortbildungen() {
   function Head({ children }) {
     return (
-      <Typography
-        color="secondary.main"
-        sx={{ gridRow: 2, marginInline: "2.5vh" }}
-        variant="h5"
-      >
+      <Typography color="secondary.main" sx={{ gridRow: 2 }} variant="h5">
         Fortbildungen
         {children}
       </Typography>
@@ -134,7 +133,7 @@ function Fortbildungen() {
     );
   }
   return (
-    <div style={{ marginInline: "5vw", marginTop: "2vh" }}>
+    <div style={{ ...mobileLebensLaufFortb }}>
       {isMobile() ? (
         <Accordion>
           <AccordionSummary expandIcon={<ExpandMore />}>
@@ -205,81 +204,92 @@ export default function UeberMich({ myRef }) {
         gridTemplateRows: "1fr 5fr",
       }}
     >
-      <Typography color="secondary.main" variant="h2" sx={{ gridArea: "1/2" }}>
-        Über mich
-      </Typography>
-
       {!isMobile() && <Lebenslauf />}
-
-      <Card
-        sx={{ display: "flex", gridRow: 2, marginTop: isMobile() ? "5vh" : 0 }}
-      >
-        <Box sx={{ display: "flex", flexDirection: "column" }}>
-          <CardContent sx={{ flex: "1 0 auto" }}>
-            <Typography component="div" variant="h5">
-              <sub>
-                <FormatQuote sx={{ fontSize: "15px" }} />
-              </sub>
-              Ich über mich
-              <sup>
-                <FormatQuote sx={{ rotate: "180deg", fontSize: "15px" }} />
-              </sup>
-            </Typography>
-            <Typography
-              variant="subtitle1"
-              component="div"
-              sx={{ color: "text.secondary" }}
-            >
-              Maria Neuling
-            </Typography>
-          </CardContent>
-          <LinearProgress
-            variant="determinate"
-            value={progress}
-            sx={{ marginInline: "2vh" }}
-            color="info"
-          />
-          <Box
-            sx={{
-              display: "flex",
-              flexDirection: "row",
-              justifyContent: "space-evenly",
-            }}
-          >
-            <IconButton onClick={toStartAudio}>
-              <SkipPrevious fontSize="large" />
-            </IconButton>
-
-            <IconButton
-              color={playing ? "info" : "default"}
-              onClick={() => {
-                playing ? pauseAudio() : playAudio();
+      <div>
+        <Typography
+          color="secondary.main"
+          variant="h2"
+          sx={{ gridArea: "1/2" }}
+        >
+          Über mich
+        </Typography>
+        <Card
+          sx={{
+            display: "flex",
+            gridRow: 2,
+            marginTop: isMobile() ? "5vh" : 0,
+          }}
+        >
+          <Box sx={{ display: "flex", flexDirection: "column" }}>
+            <CardContent sx={{ flex: "1 0 auto" }}>
+              <Typography component="div" variant="h5">
+                <sub>
+                  <FormatQuote sx={{ fontSize: "15px" }} />
+                </sub>
+                Ich über mich
+                <sup>
+                  <FormatQuote sx={{ rotate: "180deg", fontSize: "15px" }} />
+                </sup>
+              </Typography>
+              <Typography
+                variant="subtitle1"
+                component="div"
+                sx={{ color: "text.secondary" }}
+              >
+                Maria Neuling
+              </Typography>
+            </CardContent>
+            <LinearProgress
+              variant="determinate"
+              value={progress}
+              sx={{ marginInline: "2vh" }}
+              color="info"
+            />
+            <Box
+              sx={{
+                display: "flex",
+                flexDirection: "row",
+                justifyContent: "space-evenly",
               }}
             >
-              {playing ? (
-                <Pause fontSize="large" />
-              ) : (
-                <PlayArrow fontSize="large" />
-              )}
-            </IconButton>
+              <IconButton onClick={toStartAudio}>
+                <SkipPrevious fontSize="large" />
+              </IconButton>
 
-            <IconButton onClick={toggleMute} color={muted ? "default" : "info"}>
-              {muted ? (
-                <VolumeOff fontSize="large" />
-              ) : (
-                <VolumeUp fontSize="large" />
-              )}
-            </IconButton>
+              <IconButton
+                color={playing ? "info" : "default"}
+                onClick={() => {
+                  playing ? pauseAudio() : playAudio();
+                }}
+              >
+                {playing ? (
+                  <Pause fontSize="large" />
+                ) : (
+                  <PlayArrow fontSize="large" />
+                )}
+              </IconButton>
 
-            <audio
-              src={introAudio}
-              ref={audioRef}
-              onTimeUpdate={getAudioProgress}
-            />
+              <IconButton
+                onClick={toggleMute}
+                color={muted ? "default" : "info"}
+              >
+                {muted ? (
+                  <VolumeOff fontSize="large" />
+                ) : (
+                  <VolumeUp fontSize="large" />
+                )}
+              </IconButton>
+
+              <audio
+                src={introAudio}
+                ref={audioRef}
+                onTimeUpdate={getAudioProgress}
+              />
+            </Box>
           </Box>
-        </Box>
-        <CardMedia component="img" sx={{ width: 151 }} image={fotoMama} />
-      </Card>
+          <CardMedia component="img" sx={{ width: 151 }} image={fotoMama} />
+        </Card>
+      </div>
 
       {isMobile() && <Lebenslauf />}
       <Fortbildungen />
