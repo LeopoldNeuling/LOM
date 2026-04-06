@@ -42,11 +42,6 @@
   flex-direction: row;
 }
 
-.place-center-grid {
-  display: grid;
-  place-items: center;
-}
-
 .text-align-center {
   text-align: center;
 }

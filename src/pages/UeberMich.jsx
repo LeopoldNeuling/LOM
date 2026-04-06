@@ -18,6 +18,7 @@ import {
 } from "@mui/icons-material";
 import fotoMama from "../assets/fotoMama2.jpg";
 import introAudio from "../assets/audios/intro.m4a";
+import { isMobile } from "../helper/helperFunc";
 
 export default function UeberMich({ myRef }) {
   const audioRef = useRef(null);
@@ -57,8 +58,16 @@ export default function UeberMich({ myRef }) {
     <Box
       ref={myRef}
       id="ueberMich"
-      className="page content-page place-center-grid"
+      className={
+        isMobile() ? "mobile-page mobile-content-page" : "page content-page"
+      }
       sx={{
+        display: isMobile() ? "flex" : "grid",
+        flexDirection: "column",
+        justifyContent: "flex-start",
+        alignItems: "center",
+
+        placeItems: "center",
         gridTemplateColumns: "1fr 1fr 1fr",
         gridTemplateRows: "1fr 5fr",
       }}

@@ -43,7 +43,7 @@ export default function WasIstLom({ myRef }) {
       }}
     >
       <Box>
-        <Typography color="secondary.main" variant={isMobile ? "h3" : "h2"}>
+        <Typography color="secondary.main" variant={isMobile() ? "h3" : "h2"}>
           Was ist LOM?
         </Typography>
 
