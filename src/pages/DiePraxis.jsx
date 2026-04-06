@@ -77,8 +77,8 @@ export default function DiePraxis({ myRef }) {
           <CardContent>
             <Typography variant="subtitle1" color="primary.main">
               <b>
-                Ein besonderer Schwerpunkt liegt auf nonverbalen
-                Therapieverfahren wie dem Lösungsorientierten Malen (LOM®).
+                Ein Schwerpunkt liegt auf nonverbalen Therapieverfahren wie dem
+                Lösungsorientierten Malen (LOM®).
               </b>
             </Typography>
           </CardContent>

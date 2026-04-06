@@ -2,24 +2,35 @@ import { Link } from "react-router-dom";
 import { Box, Typography } from "@mui/material";
 import { AlternateEmail, LocationPin, Phone } from "@mui/icons-material";
 import praxis from "../assets/roster/foto12.jpeg";
+import { isMobile } from "../helper/helperFunc";
 
 export default function Kontakt({ myRef }) {
+  const impressum = isMobile()
+    ? {}
+    : {
+        position: "absolute",
+        bottom: 0,
+        right: 0,
+      };
+
   return (
     <Box
       ref={myRef}
       id="contact"
-      className="page wrapper-page bg-image row-flex"
+      className={"page wrapper-page bg-image"}
       sx={{
         position: "relative",
         backgroundImage: `linear-gradient(rgba(255,255,255,0.5), rgba(255,255,255,0.5)), url(${praxis})`,
         padding: "10vh 15vh",
 
-        justifyContent: "flex-start",
-        alignItems: "flex-end",
+        display: "flex",
+        flexDirection: isMobile() ? "column" : "row",
+        justifyContent: isMobile() ? "center" : "flex-start",
+        alignItems: isMobile() ? "center" : "flex-end",
       }}
     >
       <Box
-        maxWidth={500}
+        width={isMobile() ? "90vw" : "40vw"}
         sx={{
           backgroundColor: "rgba(255,255,255,0.5)",
           padding: "2vh",
@@ -80,10 +91,8 @@ export default function Kontakt({ myRef }) {
       </Box>
       <Box
         sx={{
-          position: "absolute",
-          bottom: 0,
-          right: 0,
-          width: 500,
+          ...impressum,
+          width: isMobile() ? "85vw" : "30vw",
           padding: "2vh",
           margin: "10vh 15vh",
           background: "rgba(0,0,0,0.25)",

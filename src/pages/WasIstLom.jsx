@@ -82,11 +82,11 @@ export default function WasIstLom({ myRef }) {
         variant="subtitle"
         color="secondary.main"
         maxWidth={isMobile() ? "80vw" : "30vw"}
+        textAlign={"center"}
       >
-        LOM® fördert die seelische Gesundheit, indem es sich günstig auf
-        Stresslevel und Belastungen durch negative Emotionen auswirkt. Neue
-        Perspektiven auf festgefahrene, scheinbar „unlösbare“ Probleme werden
-        gefördert.
+        LOM® fördert die seelische Gesundheit und wirkt sich positiv auf
+        Stresslevel und Belastungen aus. Neue Perspektiven auf festgefahrene,
+        scheinbar „unlösbare“ Probleme werden gefördert.
         <p></p>
         Das Lösungsorientierte Malen wirkt emotionsregulierend durch den
         Eindruck, den die Bilder auf die Malenden machen. Es geht darum,

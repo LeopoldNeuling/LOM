@@ -1,9 +1,15 @@
 import { Link } from "react-router-dom";
 import { Box } from "@mui/material";
+import { useEffect } from "react";
+import { isMobile } from "../helper/helperFunc";
 
 export default function Datenschutz() {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
-    <Box style={{ padding: "10vh" }}>
+    <Box style={{ padding: isMobile() ? "5vw" : "10vh" }}>
       <Link to="/">Zurück zur Website</Link>
       <br />
       <h1>Datenschutzerklärung</h1>
