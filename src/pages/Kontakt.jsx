@@ -1,8 +1,9 @@
 import { Link } from "react-router-dom";
 import { Box, Typography } from "@mui/material";
 import { AlternateEmail, LocationPin, Phone } from "@mui/icons-material";
-import praxis from "../assets/roster/foto12.jpeg";
 import { isMobile } from "../helper/helperFunc";
+import praxis from "../assets/roster/foto12.jpeg";
+import dve from "../assets/impressum/image002.jpg";
 
 export default function Kontakt({ myRef }) {
   const impressum = isMobile()
@@ -105,10 +106,19 @@ export default function Kontakt({ myRef }) {
         <Typography
           variant="subtitle1"
           color="primary.main"
-          sx={{ "&>*": { color: "inherit" } }}
+          sx={{
+            "&>*": {
+              color: "inherit",
+            },
+          }}
         >
           <Link to="/impressum">Impressum</Link> |{" "}
           <Link to="/daten">Datenschutzerklärung</Link>
+          <br />
+          <p></p>
+          <a href="https://www.dve.info" target="_blank">
+            <img src={dve} width={60} height={60} />
+          </a>
         </Typography>
       </Box>
     </Box>

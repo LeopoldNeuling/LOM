@@ -30,6 +30,7 @@ const mobileLebensLaufFortb = isMobile
       marginTop: "2vh",
     }
   : {};
+const fontSize = "16px";
 
 function Lebenslauf() {
   function Head({ children }) {
@@ -42,7 +43,7 @@ function Lebenslauf() {
   }
   function Body() {
     return (
-      <Typography variant="subtitle1" color="secondary.main">
+      <div style={{ fontSize: fontSize, color: "inherit" }}>
         <ul>
           <li>
             2015-2018: Primärqualifizierender Studiengang Ergotherapie (B.Sc.),
@@ -68,11 +69,11 @@ function Lebenslauf() {
             Carro Cabaiero und Cora Egger)
           </li>
           <li>
-            Seit 03/2026: Gründung Praxis für Ergotherapie und
-            Lösungsorientiertes Malen
+            03/2026: Gründung Praxis für Ergotherapie und Lösungsorientiertes
+            Malen
           </li>
         </ul>
-      </Typography>
+      </div>
     );
   }
   return (
@@ -105,7 +106,7 @@ function Fortbildungen() {
   }
   function Body() {
     return (
-      <Typography variant="subtitle1" color="secondary.main">
+      <div style={{ fontSize: fontSize, color: "inherit" }}>
         <ul>
           <li>
             Biografisches und kreatives Schreiben in unterschiedlichen
@@ -121,15 +122,15 @@ function Fortbildungen() {
             Motivational Interviewing bei Menschen mit substanzbezogenen
             Störungen
           </li>
-          <li>Kränkbarkeit und Kränkung bei narzistischen Persönlichkeiten</li>
-          <li>Scham-die tabuisierte Emotion</li>
+          <li>Kränkbarkeit und Kränkung bei narzisstischen Persönlichkeiten</li>
+          <li>Scham - die tabuisierte Emotion</li>
           <li>Das neue Bundesteilhabegesetz</li>
           <li>Wege in den Beruf nach einer psychischen Erkrankung</li>
           <li>Basiswissen Psychopharmakologie</li>
           <li>Rechtsgrundlagen zur Teilhabe am Arbeitsleben</li>
           <li>Hamet 3</li>
         </ul>
-      </Typography>
+      </div>
     );
   }
   return (
@@ -186,6 +187,8 @@ export default function UeberMich({ myRef }) {
     audioRef.current.muted = muted;
   }, [muted]);
 
+  const pageStyle = isMobile() ? {} : { maxHeight: "600px" };
+
   return (
     <Box
       ref={myRef}
@@ -194,6 +197,8 @@ export default function UeberMich({ myRef }) {
         isMobile() ? "mobile-page mobile-content-page" : "page content-page"
       }
       sx={{
+        ...pageStyle,
+
         display: isMobile() ? "flex" : "grid",
         flexDirection: "column",
         justifyContent: "flex-start",

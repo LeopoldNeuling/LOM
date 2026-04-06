@@ -88,7 +88,7 @@ export default function FuerWen({ myRef }) {
                 textAlign="left"
               >
                 Information für Ärztinnen und Ärzte: Erfolgt die
-                Heilmittelverordnung als sog. Blankoverordnung wird diese nicht
+                Heilmittelverordnung als sog. Blankoverordnung, wird diese nicht
                 in die Wirtschaftlichkeitsvorgaben gerechnet. Blankoverordnungen
                 sind somit „budgetneutral“.
               </Typography>

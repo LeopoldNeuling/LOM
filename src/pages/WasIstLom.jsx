@@ -54,7 +54,6 @@ function Gallery() {
   return (
     <>
       <ImageList
-        gap={10}
         sx={{
           width: isMobile() ? "80vw" : "50vw",
           height: "60vh",
@@ -72,7 +71,7 @@ function Gallery() {
           },
         }}
         cols={isMobile() ? 3 : 4}
-        rowHeight={164}
+        rowHeight={isMobile() ? 110 : 175}
       >
         {itemData.map((item) => (
           <ImageListItem
@@ -155,9 +154,10 @@ export default function WasIstLom({ myRef }) {
         Erkenntnissen aus der Hirnforschung und ist durch wissenschaftliche
         Studien belegt.
         <p></p>
-        Im ergotherapeutischen Prozess wir zunächst das individuelle Anliegen
-        sorgfältig exploriert und geklärt. In langsamem Tempo mit liebevoller
-        Aufmerksamkeit entstehen klare, einfache und eindeutige Bilder.
+        Im ergotherapeutischen Prozess wird zunächst das individuelle Anliegen
+        sorgfältig exploriert und geklärt.
+        <br /> In langsamem Tempo mit liebevoller Aufmerksamkeit entstehen
+        klare, einfache und eindeutige Bilder.
         <p></p>
         Das Verfahren eignet sich für alle Menschen mit psychischen und
         psychosomatischen Belastungsfaktoren, die sich Veränderung und Klärung

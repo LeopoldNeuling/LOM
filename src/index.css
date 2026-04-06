@@ -32,20 +32,6 @@
   height: 90vh;
 }
 
-.column-flex {
-  display: flex;
-  flex-direction: column;
-}
-
-.row-flex {
-  display: flex;
-  flex-direction: row;
-}
-
-.text-align-center {
-  text-align: center;
-}
-
 .bg-image {
   background-size: cover;
   background-position: center;

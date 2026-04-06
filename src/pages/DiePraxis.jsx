@@ -9,14 +9,16 @@ export default function DiePraxis({ myRef }) {
     <Box
       ref={myRef}
       id="praxis"
-      className={`${isMobile() ? "mobile-page" : "page wrapper-page"} column-flex text-align-center bg-image`}
+      className={`${isMobile() ? "mobile-page" : "page wrapper-page"} bg-image`}
       sx={{
+        display: "flex",
+        flexDirection: "column",
         justifyContent: "center",
         alignItems: "space-between",
         gap: "15vh",
 
+        textAlign: "center",
         backgroundImage: `linear-gradient(rgba(255,255,255,0.25), rgba(255,255,255,0.25)), url(${meer})`,
-        marginTop: isMobile() ? 0 : "10vh",
         paddingTop: isMobile() ? "5vh" : 0,
       }}
     >
