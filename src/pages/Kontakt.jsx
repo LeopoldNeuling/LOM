@@ -82,7 +82,7 @@ export default function Kontakt({ myRef }) {
           sx={{ gridRow: 2 }}
         >
           <a
-            href="mailto:fragner.maria@gmx.de"
+            href="mailto:info@ergo-lom.de"
             style={{ textDecoration: "underline", color: "inherit" }}
           >
             <b>info@ergo-lom.de</b>
