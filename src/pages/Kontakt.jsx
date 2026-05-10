@@ -127,7 +127,7 @@ export default function Kontakt({ myRef }) {
             style={{ width: "100%", height: 350, border: 0 }}
             allowFullScreen
             loading="lazy"
-            // referrerPolicy="no-referrer-when-downgrade"
+            referrerPolicy="no-referrer-when-downgrade"
           ></iframe>
         </div>
       </Box>
