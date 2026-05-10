@@ -18,7 +18,12 @@ export default function FuerWen({ myRef }) {
       id="fuerWen"
       className={`${isMobile() ? "mobile-page mobile-content-page" : "page content-page"} text-align-center`}
     >
-      <Typography color="secondary.main" variant="h2" gutterBottom>
+      <Typography
+        color="secondary.main"
+        variant="h2"
+        gutterBottom
+        sx={{ marginLeft: "4vw" }}
+      >
         Für wen?
       </Typography>
       <Box
@@ -70,8 +75,8 @@ export default function FuerWen({ myRef }) {
                     (psychisch-funktionelles Behandlungsgebiet).
                   </li>
                   <li>
-                    Psychiater:innen, Neurolog:innen, Hausärzt:innen sowie
-                    Psychotherapeut:innen können dieses Heilmittel verordnen.
+                    Dieses Heilmittel kann von Ärzt:innen und
+                    Psychotherapeut:innen verordnet werden.
                   </li>
                 </ul>
               </Typography>

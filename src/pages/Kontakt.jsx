@@ -58,7 +58,7 @@ export default function Kontakt({ myRef }) {
           sx={{ gridRow: 2 }}
         >
           <a
-            href="https://www.google.com/maps/place/Berlepschstraße+2,+14165+Berlin/@52.4299286,13.2541638,17z/data=!3m1!4b1!4m6!3m5!1s0x47a85a32cd077541:0x875d741ccb3306a6!8m2!3d52.4299254!4d13.2567387!16s%2Fg%2F11q48hxpv8?entry=ttu&g_ep=EgoyMDI2MDMwNC4xIKXMDSoASAFQAw%3D%3D"
+            href="https://maps.app.goo.gl/5vkEKLtKMDbJcbcMA"
             target="_blank"
             style={{ textDecoration: "underline", color: "inherit" }}
           >
