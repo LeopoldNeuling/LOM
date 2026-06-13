@@ -103,6 +103,16 @@ export default function Kontakt({ myRef }) {
           borderRadius: "5px",
         }}
       >
+        <div style={{ width: "100%", maxWidth: "600px", zIndex: 10000 }}>
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2527631.4790429487!2d7.7464261!3d51.7807558!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xa02a0fd8357d070d%3A0xfd16c8ccccca5fd1!2sPraxis%20f%C3%BCr%20Ergotherapie%20und%20L%C3%B6sungsorientiertes%20Malen%C2%AE!5e0!3m2!1sde!2sde!4v1778438950159!5m2!1sde!2sde"
+            style={{ width: "100%", height: 350, border: 0 }}
+            allowFullScreen
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+          ></iframe>
+        </div>
+
         <Typography
           variant="subtitle1"
           color="primary.main"
@@ -120,16 +130,6 @@ export default function Kontakt({ myRef }) {
             <img src={dve} width={60} height={60} />
           </a>
         </Typography>
-
-        <div style={{ width: "100%", maxWidth: "600px", zIndex: 10000 }}>
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2527631.4790429487!2d7.7464261!3d51.7807558!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xa02a0fd8357d070d%3A0xfd16c8ccccca5fd1!2sPraxis%20f%C3%BCr%20Ergotherapie%20und%20L%C3%B6sungsorientiertes%20Malen%C2%AE!5e0!3m2!1sde!2sde!4v1778438950159!5m2!1sde!2sde"
-            style={{ width: "100%", height: 350, border: 0 }}
-            allowFullScreen
-            loading="lazy"
-            referrerPolicy="no-referrer-when-downgrade"
-          ></iframe>
-        </div>
       </Box>
     </Box>
   );
