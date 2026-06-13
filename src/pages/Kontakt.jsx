@@ -13,6 +13,7 @@ export default function Kontakt({ myRef }) {
         bottom: 0,
         right: 0,
       };
+  const mobileMap = isMobile() ? { minHeight: 1000 } : {};
 
   return (
     <Box
@@ -23,6 +24,7 @@ export default function Kontakt({ myRef }) {
         position: "relative",
         backgroundImage: `linear-gradient(rgba(255,255,255,0.5), rgba(255,255,255,0.5)), url(${praxis})`,
         padding: "10vh 15vh",
+        ...mobileMap,
 
         display: "flex",
         flexDirection: isMobile() ? "column" : "row",
