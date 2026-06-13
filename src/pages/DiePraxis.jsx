@@ -1,9 +1,15 @@
 import { Box, Card, CardContent, Typography } from "@mui/material";
 import meer from "../assets/meer.png";
 import { isMobile } from "../helper/helperFunc";
+import { useEffect } from "react";
 
 export default function DiePraxis({ myRef }) {
   const cardOpacity = 0.75;
+
+  useEffect(() => {
+    const img = new Image();
+    img.src = meer;
+  }, []);
 
   return (
     <Box
