@@ -1,4 +1,4 @@
-import { useState, Fragment } from "react";
+import { useState, Fragment, useEffect } from "react";
 import {
   Box,
   ImageList,
@@ -51,6 +51,13 @@ function Gallery() {
     setOpen(false);
   };
 
+  useEffect(() => {
+    itemData.forEach((src) => {
+      const img = new Image();
+      img.src = src;
+    });
+  }, []);
+
   return (
     <>
       <ImageList
@@ -82,6 +89,9 @@ function Gallery() {
             <img
               srcSet={`${item}?w=164&h=164&fit=crop&auto=format&dpr=2 2x`}
               src={`${item}?w=164&h=164&fit=crop&auto=format`}
+              loading="eager"
+              decoding="async"
+              alt="Um die Fotos anzuschauen brauchen Sie eine Internetverbindung"
             />
           </ImageListItem>
         ))}
@@ -89,7 +99,12 @@ function Gallery() {
       <Fragment>
         <Dialog open={open} onClose={handleClose}>
           <DialogContent>
-            <img src={viewing} width={isMobile() ? "250px" : "400px"} />
+            <img
+              loading="eager"
+              decoding="async"
+              src={viewing}
+              width={isMobile() ? "250px" : "400px"}
+            />
           </DialogContent>
           <DialogActions>
             <Button onClick={handleClose}>Zurück</Button>
