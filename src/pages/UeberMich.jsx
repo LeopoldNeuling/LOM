@@ -105,6 +105,7 @@ function Fortbildungen() {
     );
   }
 
+  // before team_version create two branches: team_version and maria_version then code in team_version and push to main
   // *** for settings main branch to other branch which is behind - save other branch!! ***
   // git checkout main
   // git reset --hard other-branch
