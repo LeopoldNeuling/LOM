@@ -105,10 +105,9 @@ function Fortbildungen() {
     );
   }
 
-  //   git checkout main
-
+  // *** for settings main branch to other branch which is behind - save other branch!! ***
+  // git checkout main
   // git reset --hard other-branch
-
   // git push --force-with-lease origin main
 
   function Body() {
