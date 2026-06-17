@@ -104,6 +104,13 @@ function Fortbildungen() {
       </Typography>
     );
   }
+
+  //   git checkout main
+
+  // git reset --hard other-branch
+
+  // git push --force-with-lease origin main
+
   function Body() {
     return (
       <div style={{ fontSize: fontSize, color: "inherit" }}>
