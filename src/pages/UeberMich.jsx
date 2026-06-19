@@ -56,8 +56,7 @@ export default function UeberMich({ myRef }) {
 
         placeItems: "center",
         gridTemplateColumns: "1fr 1fr",
-        gridTemplateRows: "1fr 1fr 5fr",
-        gap: "50px",
+        gridTemplateRows: "1fr 2fr 5fr",
       }}
     >
       <Typography
