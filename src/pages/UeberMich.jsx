@@ -35,7 +35,7 @@ const fontSize = "16px";
 function Lebenslauf() {
   function Head({ children }) {
     return (
-      <Typography color="secondary.main" variant="h5" sx={{ gridRow: 2 }}>
+      <Typography color="secondary.main" variant="h5">
         Lebenslauf
         {children}
       </Typography>
@@ -98,7 +98,7 @@ function Lebenslauf() {
 function Fortbildungen() {
   function Head({ children }) {
     return (
-      <Typography color="secondary.main" sx={{ gridRow: 2 }} variant="h5">
+      <Typography color="secondary.main" variant="h5">
         Fortbildungen
         {children}
       </Typography>
@@ -194,8 +194,6 @@ export default function UeberMich({ myRef }) {
     audioRef.current.muted = muted;
   }, [muted]);
 
-  const pageStyle = isMobile() ? {} : { maxHeight: "600px" };
-
   return (
     <Box
       ref={myRef}
@@ -204,8 +202,6 @@ export default function UeberMich({ myRef }) {
         isMobile() ? "mobile-page mobile-content-page" : "page content-page"
       }
       sx={{
-        ...pageStyle,
-
         display: isMobile() ? "flex" : "grid",
         flexDirection: "column",
         justifyContent: "flex-start",
@@ -213,7 +209,6 @@ export default function UeberMich({ myRef }) {
 
         placeItems: "center",
         gridTemplateColumns: "1fr 1fr 1fr",
-        gridTemplateRows: "1fr 5fr",
       }}
     >
       {!isMobile() && <Lebenslauf />}
