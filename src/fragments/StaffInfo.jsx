@@ -1,4 +1,63 @@
-import { Typography } from "@mui/material";
+import {
+  Accordion,
+  AccordionDetails,
+  AccordionSummary,
+  Typography,
+} from "@mui/material";
+import { ExpandMore } from "@mui/icons-material";
+import { isMobile } from "../helper/helperFunc";
+
+function Lebenslauf({ content }) {
+  return isMobile() ? (
+    <Accordion sx={{ width: "84vw", marginInline: "auto", marginTop: "1vh" }}>
+      <AccordionSummary expandIcon={<ExpandMore />}>
+        <Typography color="secondary.main" variant="h6">
+          Lebenslauf
+        </Typography>
+      </AccordionSummary>
+      <AccordionDetails>
+        <Typography color="secondary.main" variant="body1" component="div">
+          {content}
+        </Typography>
+      </AccordionDetails>
+    </Accordion>
+  ) : (
+    <>
+      <Typography color="secondary.main" variant="h6">
+        Lebenslauf
+      </Typography>
+      <Typography color="secondary.main" variant="body1" component="div">
+        {content}
+      </Typography>
+    </>
+  );
+}
+
+function Fortbildungen({ content }) {
+  return isMobile() ? (
+    <Accordion sx={{ width: "84vw", marginInline: "auto", marginTop: "1vh" }}>
+      <AccordionSummary expandIcon={<ExpandMore />}>
+        <Typography color="secondary.main" variant="h6">
+          Fortbildungen
+        </Typography>
+      </AccordionSummary>
+      <AccordionDetails>
+        <Typography color="secondary.main" variant="body1" component="div">
+          {content}
+        </Typography>
+      </AccordionDetails>
+    </Accordion>
+  ) : (
+    <>
+      <Typography color="secondary.main" variant="h6">
+        Fortbildungen
+      </Typography>
+      <Typography color="secondary.main" variant="body1" component="div">
+        {content}
+      </Typography>
+    </>
+  );
+}
 
 export default function StaffInfo({ children }) {
   const [lebenslauf, fortbildungen] = children;
@@ -6,27 +65,14 @@ export default function StaffInfo({ children }) {
   return (
     <div
       style={{
-        display: "grid",
-        gridTemplateColumns: "1fr 1fr",
+        display: isMobile() ? "flex" : "grid",
         placeItems: "start",
+        flexDirection: "column",
       }}
     >
-      <div>
-        <Typography color="secondary.main" variant="h6">
-          Lebenslauf
-        </Typography>
-        <Typography color="secondary.main" variant="body1" component="div">
-          {lebenslauf}
-        </Typography>
-      </div>
-      <div>
-        <Typography color="secondary.main" variant="h6">
-          Fortbildungen
-        </Typography>
-        <Typography color="secondary.main" variant="body1" component="div">
-          {fortbildungen}
-        </Typography>
-      </div>
+      <Lebenslauf content={lebenslauf} />
+      <Fortbildungen content={fortbildungen} />
+      <div></div>
     </div>
   );
 }
