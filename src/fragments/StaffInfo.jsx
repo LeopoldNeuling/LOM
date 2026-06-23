@@ -7,9 +7,11 @@ import {
 import { ExpandMore } from "@mui/icons-material";
 import { isMobile } from "../helper/helperFunc";
 
+const accodionStyling = { marginTop: "2vw" };
+
 function Lebenslauf({ content }) {
   return isMobile() ? (
-    <Accordion sx={{ width: "84vw", marginInline: "auto", marginTop: "1vh" }}>
+    <Accordion sx={{ ...accodionStyling }}>
       <AccordionSummary expandIcon={<ExpandMore />}>
         <Typography color="secondary.main" variant="h6">
           Lebenslauf
@@ -35,7 +37,7 @@ function Lebenslauf({ content }) {
 
 function Fortbildungen({ content }) {
   return isMobile() ? (
-    <Accordion sx={{ width: "84vw", marginInline: "auto", marginTop: "1vh" }}>
+    <Accordion sx={{ ...accodionStyling }}>
       <AccordionSummary expandIcon={<ExpandMore />}>
         <Typography color="secondary.main" variant="h6">
           Fortbildungen
@@ -59,7 +61,7 @@ function Fortbildungen({ content }) {
   );
 }
 
-export default function StaffInfo({ children }) {
+export default function StaffInfo({ children, row, col }) {
   const [lebenslauf, fortbildungen] = children;
 
   return (
@@ -68,11 +70,12 @@ export default function StaffInfo({ children }) {
         display: isMobile() ? "flex" : "grid",
         placeItems: "start",
         flexDirection: "column",
+        gridColumn: col,
+        gridRow: row,
       }}
     >
       <Lebenslauf content={lebenslauf} />
       <Fortbildungen content={fortbildungen} />
-      <div></div>
     </div>
   );
 }

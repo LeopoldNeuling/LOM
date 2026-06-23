@@ -11,7 +11,8 @@ import {
 import { SkipPrevious, Pause, PlayArrow } from "@mui/icons-material";
 import { isMobile } from "../helper/helperFunc";
 
-export default function AudioCard({ name, voiceline, photo }) {
+export default function AudioCard({ name, voiceline, photo, row, col }) {
+  // audio
   const audioRef = useRef(null);
   const [playing, setPlaying] = useState(false);
   const [progress, setProgress] = useState(0);
@@ -41,63 +42,63 @@ export default function AudioCard({ name, voiceline, photo }) {
   }, []);
 
   return (
-    <div>
-      <Card
-        sx={{
-          display: "flex",
-          gridRow: 2,
-          marginTop: isMobile() ? "5vh" : 0,
-        }}
-      >
-        <Box sx={{ display: "flex", flexDirection: "column" }}>
-          <CardContent sx={{ flex: "1 0 auto" }}>
-            <Typography variant="h5" sx={{ color: "text.secondary" }}>
-              Maria Neuling
-            </Typography>
-          </CardContent>
-          <LinearProgress
-            variant="determinate"
-            value={progress}
-            sx={{ marginInline: "2vh" }}
-            color="info"
-          />
-          <Box
-            sx={{
-              display: "flex",
-              flexDirection: "row",
-              justifyContent: "space-evenly",
+    <Card
+      sx={{
+        gridRow: row,
+        gridColumn: col,
+        display: "flex",
+        maxWidth: "100%",
+        marginTop: isMobile() ? "5vh" : 0,
+      }}
+    >
+      <Box sx={{ display: "flex", flexDirection: "column" }}>
+        <CardContent sx={{ flex: "1 0 auto" }}>
+          <Typography variant="h5" sx={{ color: "text.secondary" }}>
+            {name}
+          </Typography>
+        </CardContent>
+        <LinearProgress
+          variant="determinate"
+          value={progress}
+          sx={{ marginInline: "2vh" }}
+          color="info"
+        />
+        <Box
+          sx={{
+            display: "flex",
+            flexDirection: "row",
+            justifyContent: "space-evenly",
+          }}
+        >
+          <IconButton onClick={toStartAudio}>
+            <SkipPrevious fontSize="large" />
+          </IconButton>
+
+          <IconButton
+            color={playing ? "info" : "default"}
+            onClick={() => {
+              playing ? pauseAudio() : playAudio();
             }}
           >
-            <IconButton onClick={toStartAudio}>
-              <SkipPrevious fontSize="large" />
-            </IconButton>
+            {playing ? (
+              <Pause fontSize="large" />
+            ) : (
+              <PlayArrow fontSize="large" />
+            )}
+          </IconButton>
 
-            <IconButton
-              color={playing ? "info" : "default"}
-              onClick={() => {
-                playing ? pauseAudio() : playAudio();
-              }}
-            >
-              {playing ? (
-                <Pause fontSize="large" />
-              ) : (
-                <PlayArrow fontSize="large" />
-              )}
-            </IconButton>
-
-            <audio
-              src={voiceline}
-              ref={audioRef}
-              onTimeUpdate={getAudioProgress}
-            />
-          </Box>
+          <audio
+            src={voiceline}
+            ref={audioRef}
+            onTimeUpdate={getAudioProgress}
+          />
         </Box>
-        <CardMedia
-          component="img"
-          sx={{ width: 150, height: 200 }}
-          image={photo}
-        />
-      </Card>
-    </div>
+      </Box>
+      <CardMedia
+        component="img"
+        sx={{ width: 150, height: 200, maxWidth: "50%" }}
+        image={photo}
+      />
+    </Card>
   );
 }

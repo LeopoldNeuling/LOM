@@ -58,6 +58,8 @@ export default function UeberMich({ myRef }) {
         placeItems: "center",
         gridTemplateColumns: "1fr 1fr",
         gridTemplateRows: "1fr 2fr 5fr",
+
+        paddingInline: `${isMobile() ? 7.5 : 2.5}vw`,
       }}
     >
       <Typography
@@ -68,259 +70,124 @@ export default function UeberMich({ myRef }) {
         Unser Team
       </Typography>
 
-      {isMobile() ? (
-        <>
-          <AudioCard
-            name="Maria Neuling"
-            voiceline={introAudio}
-            photo={fotoMama}
-          />
-          <StaffInfo>
-            <ul>
-              <li>
-                2015-2018: Primärqualifizierender Studiengang Ergotherapie
-                (B.Sc.), IB-Hochschule Berlin
-              </li>
-              <li>
-                10/2018 – 06/2021: Ergotherapeutin (B.Sc.) Ambulante
-                Arbeitstherapie am Anderen Ort, St. Hedwig Krankenhaus, Berlin
-              </li>
-              <li>
-                08/2021-04/2023: Ergotherapeutin Berufliches Trainingszentrum im
-                Rot-Kreuz-Institut gGmbH Berlin
-              </li>
-              <li>
-                Seit 04/2023: Klinische Ergotherapeutin Psychiatrische
-                Institutsambulanz (PIA), Stationsäquivalente Behandlung (StäB)
-                und TK-E, Theodor-Wenzel-Werk e.V. Berlin
-              </li>
-              <li>
-                09/2023-03/25: Ausbildung Lösungsorientierte Maltherapie LOM®
-                (May Carro Cabaiero und Cora Egger)
-              </li>
-              <li>
-                03/2026: Gründung Praxis für Ergotherapie und
-                Lösungsorientiertes Malen
-              </li>
-            </ul>
-            <ul>
-              <li>
-                Biografisches und kreatives Schreiben in unterschiedlichen
-                Lebensphasen und Lebenskrisen
-              </li>
-              <li>
-                Dialektisch Behaviorale Therapie (Einfühung und Vertiefung)
-              </li>
-              <li>
-                Achtsamkeitstraining MBSR (Mindful Based Stress Reduction)
-              </li>
-              <li>Umgang mit Depressionen</li>
-              <li>Umgang mit Angstpatienten</li>
-              <li>Open Dialogue (Zusatzqualifikation)</li>
-              <li>
-                Motivational Interviewing bei Menschen mit substanzbezogenen
-                Störungen
-              </li>
-              <li>
-                Kränkbarkeit und Kränkung bei narzisstischen Persönlichkeiten
-              </li>
-              <li>Scham - die tabuisierte Emotion</li>
-              <li>Das neue Bundesteilhabegesetz</li>
-              <li>Wege in den Beruf nach einer psychischen Erkrankung</li>
-              <li>Basiswissen Psychopharmakologie</li>
-              <li>Rechtsgrundlagen zur Teilhabe am Arbeitsleben</li>
-              <li>Hamet 3</li>
-            </ul>
-          </StaffInfo>
+      <AudioCard
+        name="Maria Neuling"
+        voiceline={introAudio}
+        photo={fotoMama}
+        row={2}
+        col={1}
+      />
+      <StaffInfo row={3} col={1}>
+        <ul>
+          <li>
+            2015-2018: Primärqualifizierender Studiengang Ergotherapie (B.Sc.),
+            IB-Hochschule Berlin
+          </li>
+          <li>
+            10/2018 – 06/2021: Ergotherapeutin (B.Sc.) Ambulante Arbeitstherapie
+            am Anderen Ort, St. Hedwig Krankenhaus, Berlin
+          </li>
+          <li>
+            08/2021-04/2023: Ergotherapeutin Berufliches Trainingszentrum im
+            Rot-Kreuz-Institut gGmbH Berlin
+          </li>
+          <li>
+            Seit 04/2023: Klinische Ergotherapeutin Psychiatrische
+            Institutsambulanz (PIA), Stationsäquivalente Behandlung (StäB) und
+            TK-E, Theodor-Wenzel-Werk e.V. Berlin
+          </li>
+          <li>
+            09/2023-03/25: Ausbildung Lösungsorientierte Maltherapie LOM® (May
+            Carro Cabaiero und Cora Egger)
+          </li>
+          <li>
+            03/2026: Gründung Praxis für Ergotherapie und Lösungsorientiertes
+            Malen
+          </li>
+        </ul>
+        <ul>
+          <li>
+            Biografisches und kreatives Schreiben in unterschiedlichen
+            Lebensphasen und Lebenskrisen
+          </li>
+          <li>Dialektisch Behaviorale Therapie (Einfühung und Vertiefung)</li>
+          <li>Achtsamkeitstraining MBSR (Mindful Based Stress Reduction)</li>
+          <li>Umgang mit Depressionen</li>
+          <li>Umgang mit Angstpatienten</li>
+          <li>Open Dialogue (Zusatzqualifikation)</li>
+          <li>
+            Motivational Interviewing bei Menschen mit substanzbezogenen
+            Störungen
+          </li>
+          <li>Kränkbarkeit und Kränkung bei narzisstischen Persönlichkeiten</li>
+          <li>Scham - die tabuisierte Emotion</li>
+          <li>Das neue Bundesteilhabegesetz</li>
+          <li>Wege in den Beruf nach einer psychischen Erkrankung</li>
+          <li>Basiswissen Psychopharmakologie</li>
+          <li>Rechtsgrundlagen zur Teilhabe am Arbeitsleben</li>
+          <li>Hamet 3</li>
+        </ul>
+      </StaffInfo>
 
-          <p></p>
-
-          <AudioCard name="Maria Neuling" voiceline={introAudio} photo={""} />
-          <StaffInfo>
-            <ul>
-              <li>
-                2015-2018: Primärqualifizierender Studiengang Ergotherapie
-                (B.Sc.), IB-Hochschule Berlin
-              </li>
-              <li>
-                10/2018 – 06/2021: Ergotherapeutin (B.Sc.) Ambulante
-                Arbeitstherapie am Anderen Ort, St. Hedwig Krankenhaus, Berlin
-              </li>
-              <li>
-                08/2021-04/2023: Ergotherapeutin Berufliches Trainingszentrum im
-                Rot-Kreuz-Institut gGmbH Berlin
-              </li>
-              <li>
-                Seit 04/2023: Klinische Ergotherapeutin Psychiatrische
-                Institutsambulanz (PIA), Stationsäquivalente Behandlung (StäB)
-                und TK-E, Theodor-Wenzel-Werk e.V. Berlin
-              </li>
-              <li>
-                09/2023-03/25: Ausbildung Lösungsorientierte Maltherapie LOM®
-                (May Carro Cabaiero und Cora Egger)
-              </li>
-              <li>
-                03/2026: Gründung Praxis für Ergotherapie und
-                Lösungsorientiertes Malen
-              </li>
-            </ul>
-            <ul>
-              <li>
-                Biografisches und kreatives Schreiben in unterschiedlichen
-                Lebensphasen und Lebenskrisen
-              </li>
-              <li>
-                Dialektisch Behaviorale Therapie (Einfühung und Vertiefung)
-              </li>
-              <li>
-                Achtsamkeitstraining MBSR (Mindful Based Stress Reduction)
-              </li>
-              <li>Umgang mit Depressionen</li>
-              <li>Umgang mit Angstpatienten</li>
-              <li>Open Dialogue (Zusatzqualifikation)</li>
-              <li>
-                Motivational Interviewing bei Menschen mit substanzbezogenen
-                Störungen
-              </li>
-              <li>
-                Kränkbarkeit und Kränkung bei narzisstischen Persönlichkeiten
-              </li>
-              <li>Scham - die tabuisierte Emotion</li>
-              <li>Das neue Bundesteilhabegesetz</li>
-              <li>Wege in den Beruf nach einer psychischen Erkrankung</li>
-              <li>Basiswissen Psychopharmakologie</li>
-              <li>Rechtsgrundlagen zur Teilhabe am Arbeitsleben</li>
-              <li>Hamet 3</li>
-            </ul>
-          </StaffInfo>
-        </>
-      ) : (
-        <>
-          <AudioCard
-            name="Maria Neuling"
-            voiceline={introAudio}
-            photo={fotoMama}
-          />
-
-          <AudioCard name="Maria Neuling" voiceline={introAudio} photo={""} />
-
-          <StaffInfo>
-            <ul>
-              <li>
-                2015-2018: Primärqualifizierender Studiengang Ergotherapie
-                (B.Sc.), IB-Hochschule Berlin
-              </li>
-              <li>
-                10/2018 – 06/2021: Ergotherapeutin (B.Sc.) Ambulante
-                Arbeitstherapie am Anderen Ort, St. Hedwig Krankenhaus, Berlin
-              </li>
-              <li>
-                08/2021-04/2023: Ergotherapeutin Berufliches Trainingszentrum im
-                Rot-Kreuz-Institut gGmbH Berlin
-              </li>
-              <li>
-                Seit 04/2023: Klinische Ergotherapeutin Psychiatrische
-                Institutsambulanz (PIA), Stationsäquivalente Behandlung (StäB)
-                und TK-E, Theodor-Wenzel-Werk e.V. Berlin
-              </li>
-              <li>
-                09/2023-03/25: Ausbildung Lösungsorientierte Maltherapie LOM®
-                (May Carro Cabaiero und Cora Egger)
-              </li>
-              <li>
-                03/2026: Gründung Praxis für Ergotherapie und
-                Lösungsorientiertes Malen
-              </li>
-            </ul>
-            <ul>
-              <li>
-                Biografisches und kreatives Schreiben in unterschiedlichen
-                Lebensphasen und Lebenskrisen
-              </li>
-              <li>
-                Dialektisch Behaviorale Therapie (Einfühung und Vertiefung)
-              </li>
-              <li>
-                Achtsamkeitstraining MBSR (Mindful Based Stress Reduction)
-              </li>
-              <li>Umgang mit Depressionen</li>
-              <li>Umgang mit Angstpatienten</li>
-              <li>Open Dialogue (Zusatzqualifikation)</li>
-              <li>
-                Motivational Interviewing bei Menschen mit substanzbezogenen
-                Störungen
-              </li>
-              <li>
-                Kränkbarkeit und Kränkung bei narzisstischen Persönlichkeiten
-              </li>
-              <li>Scham - die tabuisierte Emotion</li>
-              <li>Das neue Bundesteilhabegesetz</li>
-              <li>Wege in den Beruf nach einer psychischen Erkrankung</li>
-              <li>Basiswissen Psychopharmakologie</li>
-              <li>Rechtsgrundlagen zur Teilhabe am Arbeitsleben</li>
-              <li>Hamet 3</li>
-            </ul>
-          </StaffInfo>
-
-          <StaffInfo>
-            <ul>
-              <li>
-                2015-2018: Primärqualifizierender Studiengang Ergotherapie
-                (B.Sc.), IB-Hochschule Berlin
-              </li>
-              <li>
-                10/2018 – 06/2021: Ergotherapeutin (B.Sc.) Ambulante
-                Arbeitstherapie am Anderen Ort, St. Hedwig Krankenhaus, Berlin
-              </li>
-              <li>
-                08/2021-04/2023: Ergotherapeutin Berufliches Trainingszentrum im
-                Rot-Kreuz-Institut gGmbH Berlin
-              </li>
-              <li>
-                Seit 04/2023: Klinische Ergotherapeutin Psychiatrische
-                Institutsambulanz (PIA), Stationsäquivalente Behandlung (StäB)
-                und TK-E, Theodor-Wenzel-Werk e.V. Berlin
-              </li>
-              <li>
-                09/2023-03/25: Ausbildung Lösungsorientierte Maltherapie LOM®
-                (May Carro Cabaiero und Cora Egger)
-              </li>
-              <li>
-                03/2026: Gründung Praxis für Ergotherapie und
-                Lösungsorientiertes Malen
-              </li>
-            </ul>
-            <ul>
-              <li>
-                Biografisches und kreatives Schreiben in unterschiedlichen
-                Lebensphasen und Lebenskrisen
-              </li>
-              <li>
-                Dialektisch Behaviorale Therapie (Einfühung und Vertiefung)
-              </li>
-              <li>
-                Achtsamkeitstraining MBSR (Mindful Based Stress Reduction)
-              </li>
-              <li>Umgang mit Depressionen</li>
-              <li>Umgang mit Angstpatienten</li>
-              <li>Open Dialogue (Zusatzqualifikation)</li>
-              <li>
-                Motivational Interviewing bei Menschen mit substanzbezogenen
-                Störungen
-              </li>
-              <li>
-                Kränkbarkeit und Kränkung bei narzisstischen Persönlichkeiten
-              </li>
-              <li>Scham - die tabuisierte Emotion</li>
-              <li>Das neue Bundesteilhabegesetz</li>
-              <li>Wege in den Beruf nach einer psychischen Erkrankung</li>
-              <li>Basiswissen Psychopharmakologie</li>
-              <li>Rechtsgrundlagen zur Teilhabe am Arbeitsleben</li>
-              <li>Hamet 3</li>
-            </ul>
-          </StaffInfo>
-        </>
-      )}
+      {/* problem if name > 12 */}
+      <AudioCard
+        name="Max Mustermannls"
+        voiceline={introAudio}
+        photo={fotoMama}
+        row={2}
+        col={2}
+      />
+      <StaffInfo row={3} col={2}>
+        <ul>
+          <li>
+            2015-2018: Primärqualifizierender Studiengang Ergotherapie (B.Sc.),
+            IB-Hochschule Berlin
+          </li>
+          <li>
+            10/2018 – 06/2021: Ergotherapeutin (B.Sc.) Ambulante Arbeitstherapie
+            am Anderen Ort, St. Hedwig Krankenhaus, Berlin
+          </li>
+          <li>
+            08/2021-04/2023: Ergotherapeutin Berufliches Trainingszentrum im
+            Rot-Kreuz-Institut gGmbH Berlin
+          </li>
+          <li>
+            Seit 04/2023: Klinische Ergotherapeutin Psychiatrische
+            Institutsambulanz (PIA), Stationsäquivalente Behandlung (StäB) und
+            TK-E, Theodor-Wenzel-Werk e.V. Berlin
+          </li>
+          <li>
+            09/2023-03/25: Ausbildung Lösungsorientierte Maltherapie LOM® (May
+            Carro Cabaiero und Cora Egger)
+          </li>
+          <li>
+            03/2026: Gründung Praxis für Ergotherapie und Lösungsorientiertes
+            Malen
+          </li>
+        </ul>
+        <ul>
+          <li>
+            Biografisches und kreatives Schreiben in unterschiedlichen
+            Lebensphasen und Lebenskrisen
+          </li>
+          <li>Dialektisch Behaviorale Therapie (Einfühung und Vertiefung)</li>
+          <li>Achtsamkeitstraining MBSR (Mindful Based Stress Reduction)</li>
+          <li>Umgang mit Depressionen</li>
+          <li>Umgang mit Angstpatienten</li>
+          <li>Open Dialogue (Zusatzqualifikation)</li>
+          <li>
+            Motivational Interviewing bei Menschen mit substanzbezogenen
+            Störungen
+          </li>
+          <li>Kränkbarkeit und Kränkung bei narzisstischen Persönlichkeiten</li>
+          <li>Scham - die tabuisierte Emotion</li>
+          <li>Das neue Bundesteilhabegesetz</li>
+          <li>Wege in den Beruf nach einer psychischen Erkrankung</li>
+          <li>Basiswissen Psychopharmakologie</li>
+          <li>Rechtsgrundlagen zur Teilhabe am Arbeitsleben</li>
+          <li>Hamet 3</li>
+        </ul>
+      </StaffInfo>
     </Box>
   );
 }
