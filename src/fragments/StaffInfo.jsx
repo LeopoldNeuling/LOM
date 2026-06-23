@@ -15,17 +15,16 @@ const accodionStyling = { marginTop: "2vw" };
 export default function StaffInfo({ children, row, col }) {
   const [lebenslauf, fortbildungen] = children;
 
+  let curText, colonPos, date, rest;
   const formattedLebenslauf = cloneElement(lebenslauf, {
     children: Children.map(lebenslauf.props.children, (child) => {
-      const curText = child.props.children;
+      curText = child.props.children;
 
-      if (typeof curText !== "string" || !curText.includes(":")) {
-        return child;
-      }
+      if (typeof curText !== "string" || !curText.includes(":")) return child;
 
-      const colonPos = curText.indexOf(":");
-      const date = curText.substring(0, colonPos);
-      const rest = curText.substring(colonPos + 1);
+      colonPos = curText.indexOf(":");
+      date = curText.substring(0, colonPos);
+      rest = curText.substring(colonPos + 1);
 
       return cloneElement(child, {
         children: (
@@ -40,9 +39,36 @@ export default function StaffInfo({ children, row, col }) {
 
   const [vLebenslauf, setV] = useState(true);
 
+  const [expanded, setExpanded] = useState(false);
+  const handleChange = (panel) => (_event, newExpanded) => {
+    setExpanded(newExpanded ? panel : false);
+  };
+
   const navMargin = isMobile() ? { marginTop: "2vh" } : {};
 
-  return (
+  return isMobile() ? (
+    <>
+      <Accordion
+        sx={{ marginTop: "2vh" }}
+        expanded={expanded === "panel1"}
+        onChange={handleChange("panel1")}
+      >
+        <AccordionSummary expandIcon={<ExpandMore />}>
+          <Typography variant="h6">Lebenslauf</Typography>
+        </AccordionSummary>
+        <AccordionDetails>{formattedLebenslauf}</AccordionDetails>
+      </Accordion>
+      <Accordion
+        expanded={expanded === "panel2"}
+        onChange={handleChange("panel2")}
+      >
+        <AccordionSummary expandIcon={<ExpandMore />}>
+          <Typography variant="h6">Fortbildungen</Typography>
+        </AccordionSummary>
+        <AccordionDetails>{fortbildungen}</AccordionDetails>
+      </Accordion>
+    </>
+  ) : (
     <Stack
       spacing={{ xs: 1, sm: 2 }}
       direction="row"
