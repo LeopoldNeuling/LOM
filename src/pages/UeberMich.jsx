@@ -88,7 +88,7 @@ export default function UeberMich({ myRef }) {
             am Anderen Ort, St. Hedwig Krankenhaus, Berlin
           </li>
           <li>
-            08/2021-04/2023: Ergotherapeutin Berufliches Trainingszentrum im
+            08/2021 - 04/2023: Ergotherapeutin Berufliches Trainingszentrum im
             Rot-Kreuz-Institut gGmbH Berlin
           </li>
           <li>
@@ -97,7 +97,7 @@ export default function UeberMich({ myRef }) {
             TK-E, Theodor-Wenzel-Werk e.V. Berlin
           </li>
           <li>
-            09/2023-03/25: Ausbildung Lösungsorientierte Maltherapie LOM® (May
+            09/2023 - 03/25: Ausbildung Lösungsorientierte Maltherapie LOM® (May
             Carro Cabaiero und Cora Egger)
           </li>
           <li>
@@ -131,7 +131,7 @@ export default function UeberMich({ myRef }) {
 
       {/* problem if name > 12 */}
       <AudioCard
-        name="Max Mustermannls"
+        name="Max Mustermann"
         voiceline={introAudio}
         photo={fotoMama}
         row={2}
