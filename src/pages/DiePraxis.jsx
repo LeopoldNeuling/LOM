@@ -1,5 +1,6 @@
 import { Box, Card, CardContent, Typography } from "@mui/material";
 import meer from "../assets/meer.png";
+import meerNeu from "../assets/meerNeu.png";
 import { isMobile } from "../helper/helperFunc";
 import { useEffect } from "react";
 
@@ -8,7 +9,7 @@ export default function DiePraxis({ myRef }) {
 
   useEffect(() => {
     const img = new Image();
-    img.src = meer;
+    img.src = meerNeu;
   }, []);
 
   return (
@@ -24,7 +25,7 @@ export default function DiePraxis({ myRef }) {
         gap: "15vh",
 
         textAlign: "center",
-        backgroundImage: `linear-gradient(rgba(255,255,255,0.25), rgba(255,255,255,0.25)), url(${meer})`,
+        backgroundImage: `linear-gradient(rgba(255,255,255,0.25), rgba(255,255,255,0.25)), url(${meerNeu})`,
         paddingTop: isMobile() ? "5vh" : 0,
       }}
     >
