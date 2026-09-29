@@ -113,7 +113,8 @@ export default function Kontakt({ myRef }) {
           }}
         >
           <Link to="/impressum">Impressum</Link> |{" "}
-          <Link to="/daten">Datenschutzerklärung</Link>
+          <Link to="/daten">Datenschutzerklärung</Link> |{" "}
+          <Link to="/links">Webtipps</Link>
           <br />
           <p></p>
           <a href="https://www.dve.info" target="_blank">
