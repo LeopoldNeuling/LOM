@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
+import { Box } from "@mui/material";
 
 export default function Impressum() {
   useEffect(() => {
@@ -7,7 +8,7 @@ export default function Impressum() {
   }, []);
 
   return (
-    <div style={{ padding: "10vh" }}>
+    <Box style={{ padding: "5vw" }}>
       <Link to="/">Zurück zur Website</Link>
       <br />
       <b>Impressum</b>
@@ -50,6 +51,6 @@ export default function Impressum() {
       Wir nehmen nicht an Streitbeilegungsverfahren vor einer
       Verbraucherschlichtungsstelle teil und sind dazu auch nicht verpflichtet.
       <br />
-    </div>
+    </Box>
   );
 }
