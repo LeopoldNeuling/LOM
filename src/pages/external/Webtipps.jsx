@@ -8,9 +8,10 @@ import {
 } from "@mui/material";
 import { Link } from "react-router-dom";
 import { isMobile } from "../../helper/helperFunc";
+import { useEffect } from "react";
 
 const links = [
-{
+  {
     title: "LOM International",
     url: "https://lom-international.org/de/home",
     imgSrc:
@@ -45,10 +46,13 @@ const links = [
     url: "https://juliagustavus.com",
     imgSrc: "https://juliagustavus.com/img/logo-farbe.png",
   },
-  
 ];
 
 export default function Webtipps() {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <Box sx={{ padding: "5vw" }}>
       <Link to="/">Zurück zur Website</Link>
