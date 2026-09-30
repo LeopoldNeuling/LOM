@@ -10,8 +10,14 @@ import { Link } from "react-router-dom";
 import { isMobile } from "../../helper/helperFunc";
 
 const links = [
+{
+    title: "LOM International",
+    url: "https://lom-international.org/de/home",
+    imgSrc:
+      "https://lom-international.org/fileadmin/sys/fe/public/img/logo.png",
+  },
   {
-    title: "Intuarts",
+    title: "IntuArts: Intuitiv Malen - Deine Kreative Auszeit",
     url: "https://www.intuarts.com",
     imgSrc:
       "https://static.wixstatic.com/media/a72785_c264a72d48ce4a2c91bffbb56d9033d0~mv2.jpg/v1/fill/w_118,h_120,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/Intuarts%20Logo%20Apple.jpg",
@@ -35,16 +41,11 @@ const links = [
       "https://maycarrocabaleiro.com/wp-content/uploads/2020/04/logo-may-web-GOLD-450.png",
   },
   {
-    title: "Julia Gustavus",
+    title: "Julia Gustavus: Coaching mit und ohne Pferd",
     url: "https://juliagustavus.com",
     imgSrc: "https://juliagustavus.com/img/logo-farbe.png",
   },
-  {
-    title: "LOM International",
-    url: "https://lom-international.org/de/home",
-    imgSrc:
-      "https://lom-international.org/fileadmin/sys/fe/public/img/logo.png",
-  },
+  
 ];
 
 export default function Webtipps() {
@@ -52,7 +53,7 @@ export default function Webtipps() {
     <Box sx={{ padding: "5vw" }}>
       <Link to="/">Zurück zur Website</Link>
       <Typography variant={isMobile() ? "h2" : "h1"} sx={{ my: 3 }}>
-        Webtipps
+        Interessante Links
       </Typography>
 
       <Grid container spacing={3}>
