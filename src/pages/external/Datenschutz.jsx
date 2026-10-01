@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom";
 import { Box } from "@mui/material";
 import { useEffect } from "react";
-import { isMobile } from "../helper/helperFunc";
 
 export default function Datenschutz() {
   useEffect(() => {
@@ -9,7 +8,7 @@ export default function Datenschutz() {
   }, []);
 
   return (
-    <Box style={{ padding: isMobile() ? "5vw" : "10vh" }}>
+    <Box style={{ padding: "5vw" }}>
       <Link to="/">Zurück zur Website</Link>
       <br />
       <h1>Datenschutzerklärung</h1>
@@ -28,46 +27,32 @@ export default function Datenschutz() {
       <p>Die verwendeten Begriffe sind nicht geschlechtsspezifisch.</p>
       <p>Stand: 19. März 2026</p>
       <h2>Inhaltsübersicht</h2>{" "}
-      <ul class="index">
+      <ul>
         <li>
-          <a class="index-link" href="#m716">
-            Präambel
-          </a>
+          <a href="#m716">Präambel</a>
         </li>
         <li>
-          <a class="index-link" href="#m3">
-            Verantwortlicher
-          </a>
+          <a href="#m3">Verantwortlicher</a>
         </li>
         <li>
-          <a class="index-link" href="#mOverview">
-            Übersicht der Verarbeitungen
-          </a>
+          <a href="#mOverview">Übersicht der Verarbeitungen</a>
         </li>
         <li>
-          <a class="index-link" href="#m2427">
-            Maßgebliche Rechtsgrundlagen
-          </a>
+          <a href="#m2427">Maßgebliche Rechtsgrundlagen</a>
         </li>
         <li>
-          <a class="index-link" href="#m27">
-            Sicherheitsmaßnahmen
-          </a>
+          <a href="#m27">Sicherheitsmaßnahmen</a>
         </li>
         <li>
-          <a class="index-link" href="#m12">
+          <a href="#m12">
             Allgemeine Informationen zur Datenspeicherung und Löschung
           </a>
         </li>
         <li>
-          <a class="index-link" href="#m10">
-            Rechte der betroffenen Personen
-          </a>
+          <a href="#m10">Rechte der betroffenen Personen</a>
         </li>
         <li>
-          <a class="index-link" href="#m15">
-            Änderung und Aktualisierung
-          </a>
+          <a href="#m15">Änderung und Aktualisierung</a>
         </li>
       </ul>
       <h2 id="m3">Verantwortlicher</h2>
@@ -214,7 +199,7 @@ export default function Datenschutz() {
         Haus A<br />
         10559 Berlin
       </p>
-      <p class="seal">
+      <p>
         <a
           href="https://datenschutz-generator.de/"
           title="Rechtstext von Dr. Schwenke - für weitere Informationen bitte anklicken."
