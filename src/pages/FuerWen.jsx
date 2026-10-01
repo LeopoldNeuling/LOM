@@ -48,9 +48,11 @@ export default function FuerWen({ myRef }) {
                 color="secondary.main"
                 textAlign="left"
               >
-                Das Verfahren eignet sich für alle Menschen mit psychischen und
-                psychosomatischen Belastungsfaktoren, die sich Veränderung und
-                Klärung wünschen.
+                <div>
+                  Das Verfahren eignet sich für alle Menschen mit psychischen
+                  und psychosomatischen Belastungsfaktoren, die sich Veränderung
+                  und Klärung wünschen.
+                </div>
               </Typography>
             </CardContent>
           </CardActionArea>
@@ -92,10 +94,12 @@ export default function FuerWen({ myRef }) {
                 color="secondary.main"
                 textAlign="left"
               >
-                Information für Ärztinnen und Ärzte: Erfolgt die
-                Heilmittelverordnung als sog. Blankoverordnung, wird diese nicht
-                in die Wirtschaftlichkeitsvorgaben gerechnet. Blankoverordnungen
-                sind somit „budgetneutral“.
+                <div>
+                  Information für Ärztinnen und Ärzte: Erfolgt die
+                  Heilmittelverordnung als sog. Blankoverordnung, wird diese
+                  nicht in die Wirtschaftlichkeitsvorgaben gerechnet.
+                  Blankoverordnungen sind somit „budgetneutral“.
+                </div>
               </Typography>
             </CardContent>
           </CardActionArea>

@@ -30,20 +30,52 @@ export default function Kontakt({ myRef }) {
           left: 0,
           width: "100%",
           height: "10vh",
-          backgroundColor: "secondary.main",
+          backgroundColor: "rgba(0,0,0,0.25)",
+          borderTop: "solid 1px white",
 
           display: "flex",
           flexDirection: "row",
+
+          "&>*": { paddingInline: "2vw" },
+          "&>*>*>*": { color: "inherit" },
         }}
       >
-        <Box sx={{ outline: "blue" }}>
-          <Link>Berlepschstraße 2, 14165 Berlin</Link>
-          <Link>0157 57 236 000</Link> <Link>info@ergo-lom.de</Link>
+        <Box
+          sx={{
+            width: "100%",
+            display: "grid",
+            placeItems: "center",
+            borderRight: "solid 1px white",
+          }}
+        >
+          <Typography variant="subtitle1" color="primary.main">
+            <div>
+              Praxis für Ergotherapie und Lösungorientiertes Malen®, Maria
+              Neuling, Ergotherapeutin (B.Sc.)
+            </div>
+            <a
+              href="https://maps.app.goo.gl/22NJAR8yqV8RE15r6"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Berlepschstraße 2, 14165 Berlin
+            </a>{" "}
+            | <a href="tel:015757236000">0157 57 236 000</a> |{" "}
+            <a href="mailto:info@ergo-lom.de">info@ergo-lom.de</a>
+          </Typography>
         </Box>
-        <Box sx={{ outline: "red" }}>
-          <Link to="/daten">Datenschutzerklärung</Link> |
-          <Link to="/impressum">Impressum</Link> |
-          <Link to="/links">Interessante Links</Link>
+        <Box
+          sx={{
+            width: "55vw",
+            display: "grid",
+            placeItems: "center",
+          }}
+        >
+          <Typography variant="subtitle1" color="primary.main">
+            <Link to="/impressum">Impressum</Link> |{" "}
+            <Link to="/daten">Datenschutzerklärung</Link> |{" "}
+            <Link to="/links">Interessante Links</Link>
+          </Typography>
         </Box>
       </Box>
     </Box>
