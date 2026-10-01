@@ -1,6 +1,6 @@
 import { AppBar, Box, Menu, Toolbar } from "@mui/material";
 import { isMobile } from "../helper/helperFunc";
-import Link from "./Link.jsx";
+import LinkFrag from "./LinkFrag.jsx";
 import logo from "../assets/logo.png";
 
 function Menubar({ curTarget }) {
@@ -23,11 +23,19 @@ function Menubar({ curTarget }) {
         }}
       />
       <Box sx={{ ...style }}>
-        <Link text="Die Praxis" scrollID="praxis" trigger={curTarget} />
-        <Link text="Was ist LOM?" scrollID="wasIstLom" trigger={curTarget} />
-        <Link text="Über mich" scrollID="ueberMich" trigger={curTarget} />
-        <Link text="Für Wen?" scrollID="fuerWen" trigger={curTarget} />
-        <Link text="Kontakt und Lage" scrollID="contact" trigger={curTarget} />
+        <LinkFrag text="Die Praxis" scrollID="praxis" trigger={curTarget} />
+        <LinkFrag
+          text="Was ist LOM?"
+          scrollID="wasIstLom"
+          trigger={curTarget}
+        />
+        <LinkFrag text="Über mich" scrollID="ueberMich" trigger={curTarget} />
+        <LinkFrag text="Für Wen?" scrollID="fuerWen" trigger={curTarget} />
+        <LinkFrag
+          text="Kontakt und Lage"
+          scrollID="contact"
+          trigger={curTarget}
+        />
       </Box>
     </>
   );

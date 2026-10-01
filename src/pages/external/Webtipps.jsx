@@ -18,6 +18,11 @@ const links = [
       "https://lom-international.org/fileadmin/sys/fe/public/img/logo.png",
   },
   {
+    title: "Deutscher Verband Ergotherapie",
+    url: "https://www.dve.info",
+    imgSrc: "https://www.dve.info/application/files/2917/2863/9537/logo.png",
+  },
+  {
     title: "IntuArts: Intuitiv Malen - Deine Kreative Auszeit",
     url: "https://www.intuarts.com",
     imgSrc:

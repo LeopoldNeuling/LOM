@@ -1,7 +1,7 @@
 import { Typography, Button } from "@mui/material";
 import { isMobile } from "../helper/helperFunc";
 
-export default function Link({ text, scrollID, trigger }) {
+export default function LinkFrag({ text, scrollID, trigger }) {
   function scroll() {
     const element = document.getElementById(scrollID);
     if (element) element.scrollIntoView({ behavior: "smooth" });
@@ -11,7 +11,7 @@ export default function Link({ text, scrollID, trigger }) {
 
   return (
     <Button
-      variant={trigger == scrollID ? "contained" : "outlined"}
+      variant={trigger == scrollID ? "contained" : "text"}
       sx={{ ...margin }}
       onClick={scroll}
     >

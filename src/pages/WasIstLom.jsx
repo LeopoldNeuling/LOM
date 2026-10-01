@@ -149,7 +149,8 @@ export default function WasIstLom({ myRef }) {
         variant="subtitle"
         color="secondary.main"
         maxWidth={isMobile() ? "80vw" : "30vw"}
-        textAlign={"center"}
+        textAlign={"left"}
+        lineHeight={1.55}
       >
         LOM® fördert die seelische Gesundheit und wirkt sich positiv auf
         Stresslevel und Belastungen aus. Neue Perspektiven auf festgefahrene,
