@@ -10,6 +10,7 @@ import {
   Accordion,
   AccordionSummary,
   AccordionDetails,
+  Button,
 } from "@mui/material";
 import {
   FormatQuote,
@@ -19,63 +20,140 @@ import {
   VolumeOff,
   VolumeUp,
   ExpandMore,
+  ArrowRightAlt,
 } from "@mui/icons-material";
 import fotoMama from "../assets/fotoMama2.jpg";
 import introAudio from "../assets/audios/intro.m4a";
 import { isMobile } from "../helper/helperFunc";
 
-const mobileLebensLaufFortb = isMobile
+const mobileLebensLaufFortb = isMobile()
   ? {
       marginInline: "5vw",
       marginTop: "2vh",
     }
   : {};
+
 const fontSize = "16px";
 
+function FachlVernetzungen() {
+  // 2.3 -> Links
+  return (
+    <ul>
+      <li>Teilnahme an regelmäßigen Supervisionen</li>
+      <li>Mitgliedschaft im LOM-Netzwerk Deutschland</li>
+      <li>Mitgliedschaft im DVE</li>
+    </ul>
+  );
+}
+
 function Lebenslauf() {
-  function Head({ children }) {
+  const entries = [
+    {
+      date: "2015-2018",
+      text: "Primärqualifizierender Studiengang Ergotherapie (B.Sc.), IB-Hochschule Berlin",
+    },
+    {
+      date: "10/2018 – 06/2021",
+      text: "Ergotherapeutin (B.Sc.) Ambulante Arbeitstherapie am Anderen Ort, St. Hedwig Krankenhaus, Berlin",
+    },
+    {
+      date: "08/2021-04/2023",
+      text: "Ergotherapeutin Berufliches Trainingszentrum im Rot-Kreuz-Institut gGmbH Berlin",
+    },
+    {
+      date: "Seit 04/2023",
+      text: "Klinische Ergotherapeutin Psychiatrische Institutsambulanz (PIA), Stationsäquivalente Behandlung (StäB) und TK-E, Theodor-Wenzel-Werk e.V. Berlin",
+    },
+    {
+      date: "09/2023-03/25",
+      text: "Ausbildung Lösungsorientierte Maltherapie LOM® (May Carro Cabaiero und Cora Egger)",
+    },
+    {
+      date: "03/2026",
+      text: "Gründung Praxis für Ergotherapie und Lösungsorientiertes Malen",
+    },
+  ];
+
+  function Head() {
     return (
       <Typography color="secondary.main" variant="h5">
         Lebenslauf
-        {children}
       </Typography>
     );
   }
+
   function Body() {
     return (
-      <div style={{ fontSize: fontSize, color: "inherit" }}>
-        <ul>
-          <li>
-            2015-2018: Primärqualifizierender Studiengang Ergotherapie (B.Sc.),
-            IB-Hochschule Berlin
-          </li>
-          <li>
-            10/2018 – 06/2021: Ergotherapeutin (B.Sc.) Ambulante Arbeitstherapie
-            am Anderen Ort,
-            <br />
-            St. Hedwig Krankenhaus, Berlin
-          </li>
-          <li>
-            08/2021-04/2023: Ergotherapeutin Berufliches Trainingszentrum im
-            Rot-Kreuz-Institut gGmbH Berlin
-          </li>
-          <li>
-            Seit 04/2023: Klinische Ergotherapeutin Psychiatrische
-            Institutsambulanz (PIA), Stationsäquivalente Behandlung (StäB) und
-            TK-E, Theodor-Wenzel-Werk e.V. Berlin
-          </li>
-          <li>
-            09/2023-03/25: Ausbildung Lösungsorientierte Maltherapie LOM® (May
-            Carro Cabaiero und Cora Egger)
-          </li>
-          <li>
-            03/2026: Gründung Praxis für Ergotherapie und Lösungsorientiertes
-            Malen
-          </li>
-        </ul>
-      </div>
+      <Box sx={{ mt: 2 }}>
+        {entries.map((entry, index) => (
+          <Box
+            key={`${entry.date}-${index}`}
+            sx={{
+              display: "grid",
+              gridTemplateColumns: "20px 1fr",
+              columnGap: 2,
+              pb: index === entries.length - 1 ? 0 : 3,
+            }}
+          >
+            <Box
+              sx={{
+                position: "relative",
+                display: "flex",
+                justifyContent: "center",
+              }}
+            >
+              {index !== entries.length - 1 && (
+                <Box
+                  sx={{
+                    position: "absolute",
+                    top: 10,
+                    bottom: -24,
+                    width: "2px",
+                    bgcolor: "secondary.main",
+                    opacity: 0.35,
+                  }}
+                />
+              )}
+
+              <Box
+                sx={{
+                  mt: "4px",
+                  width: 10,
+                  height: 10,
+                  borderRadius: "50%",
+                  bgcolor: "secondary.main",
+                  zIndex: 1,
+                }}
+              />
+            </Box>
+
+            <Box>
+              <Typography
+                sx={{
+                  fontSize,
+                  fontWeight: 700,
+                  color: "secondary.main",
+                }}
+              >
+                {entry.date}
+              </Typography>
+
+              <Typography
+                sx={{
+                  fontSize,
+                  mt: 0.5,
+                  lineHeight: 1.5,
+                }}
+              >
+                {entry.text}
+              </Typography>
+            </Box>
+          </Box>
+        ))}
+      </Box>
     );
   }
+
   return (
     <div style={{ ...mobileLebensLaufFortb }}>
       {isMobile() ? (
@@ -83,63 +161,96 @@ function Lebenslauf() {
           <AccordionSummary expandIcon={<ExpandMore />}>
             <Head />
           </AccordionSummary>
+
           <AccordionDetails>
             <Body />
           </AccordionDetails>
         </Accordion>
       ) : (
-        <Head>
+        <Box>
+          <Head />
           <Body />
-        </Head>
+        </Box>
       )}
     </div>
   );
 }
+
 function Fortbildungen() {
-  function Head({ children }) {
+  const [showFortbildungen, setShow] = useState(true);
+  function Head() {
     return (
-      <Typography color="secondary.main" variant="h5">
-        Fortbildungen
-        {children}
-      </Typography>
+      <>
+        <Typography color="secondary.main" variant="h5">
+          {!isMobile() ? (
+            <>
+              {showFortbildungen ? "Fortbildungen" : "Fachliche Vernetzungen"}
+            </>
+          ) : (
+            "Fortbildungen"
+          )}
+        </Typography>
+
+        {!isMobile() && (
+          <Button onClick={() => setShow((prev) => !prev)} variant="contained">
+            <ArrowRightAlt />
+            {showFortbildungen ? "Fachl. Vernetzungen" : "Fortbildungen"}
+          </Button>
+        )}
+      </>
     );
   }
 
-  // before team_version create two branches: team_version and maria_version then code in team_version and push to main
-  // *** for settings main branch to other branch which is behind - save other branch!! ***
-  // git checkout main
-  // git reset --hard other-branch
-  // git push --force-with-lease origin main
-
   function Body() {
     return (
-      <div style={{ fontSize: fontSize, color: "inherit" }}>
-        <ul>
-          <li>
-            Biografisches und kreatives Schreiben in unterschiedlichen
-            Lebensphasen und Lebenskrisen
-          </li>
-          <li>Dialektisch Behaviorale Therapie (Einfühung und Vertiefung)</li>
-          <li>Achtsamkeitstraining MBSR (Mindful Based Stress Reduction)</li>
-
-          <li>Umgang mit Depressionen</li>
-          <li>Umgang mit Angstpatienten</li>
-          <li>Open Dialogue (Zusatzqualifikation)</li>
-          <li>
-            Motivational Interviewing bei Menschen mit substanzbezogenen
-            Störungen
-          </li>
-          <li>Kränkbarkeit und Kränkung bei narzisstischen Persönlichkeiten</li>
-          <li>Scham - die tabuisierte Emotion</li>
-          <li>Das neue Bundesteilhabegesetz</li>
-          <li>Wege in den Beruf nach einer psychischen Erkrankung</li>
-          <li>Basiswissen Psychopharmakologie</li>
-          <li>Rechtsgrundlagen zur Teilhabe am Arbeitsleben</li>
-          <li>Hamet 3</li>
+      <div style={{ fontSize, color: "inherit" }}>
+        <ul
+          style={
+            isMobile()
+              ? undefined
+              : {
+                  marginTop: "1rem",
+                  paddingLeft: "1.5rem",
+                }
+          }
+        >
+          {showFortbildungen ? (
+            <>
+              <li>
+                Biografisches und kreatives Schreiben in unterschiedlichen
+                Lebensphasen und Lebenskrisen
+              </li>
+              <li>
+                Dialektisch Behaviorale Therapie (Einführung und Vertiefung)
+              </li>
+              <li>
+                Achtsamkeitstraining MBSR (Mindful Based Stress Reduction)
+              </li>
+              <li>Umgang mit Depressionen</li>
+              <li>Umgang mit Angstpatienten</li>
+              <li>Open Dialogue (Zusatzqualifikation)</li>
+              <li>
+                Motivational Interviewing bei Menschen mit substanzbezogenen
+                Störungen
+              </li>
+              <li>
+                Kränkbarkeit und Kränkung bei narzisstischen Persönlichkeiten
+              </li>
+              <li>Scham - die tabuisierte Emotion</li>
+              <li>Das neue Bundesteilhabegesetz</li>
+              <li>Wege in den Beruf nach einer psychischen Erkrankung</li>
+              <li>Basiswissen Psychopharmakologie</li>
+              <li>Rechtsgrundlagen zur Teilhabe am Arbeitsleben</li>
+              <li>Hamet 3</li>
+            </>
+          ) : (
+            <FachlVernetzungen />
+          )}
         </ul>
       </div>
     );
   }
+
   return (
     <div style={{ ...mobileLebensLaufFortb }}>
       {isMobile() ? (
@@ -147,14 +258,16 @@ function Fortbildungen() {
           <AccordionSummary expandIcon={<ExpandMore />}>
             <Head />
           </AccordionSummary>
+
           <AccordionDetails>
             <Body />
           </AccordionDetails>
         </Accordion>
       ) : (
-        <Head>
+        <Box sx={{ marginLeft: "10vw" }}>
+          <Head />
           <Body />
-        </Head>
+        </Box>
       )}
     </div>
   );
@@ -202,104 +315,157 @@ export default function UeberMich({ myRef }) {
         isMobile() ? "mobile-page mobile-content-page" : "page content-page"
       }
       sx={{
-        display: isMobile() ? "flex" : "grid",
+        display: "flex",
         flexDirection: "column",
-        justifyContent: "flex-start",
         alignItems: "center",
-
-        placeItems: "center",
-        gridTemplateColumns: "1fr 1fr 1fr",
+        width: "100%",
       }}
     >
-      {!isMobile() && <Lebenslauf />}
-      <div>
-        <Typography
-          color="secondary.main"
-          variant="h2"
-          sx={{ gridArea: "1/2" }}
-        >
-          Über mich
-        </Typography>
-        <Card
-          sx={{
-            display: "flex",
-            gridRow: 2,
-            marginTop: isMobile() ? "5vh" : 0,
-          }}
-        >
-          <Box sx={{ display: "flex", flexDirection: "column" }}>
-            <CardContent sx={{ flex: "1 0 auto" }}>
-              <Typography component="div" variant="h5">
-                <sub>
-                  <FormatQuote sx={{ fontSize: "15px" }} />
-                </sub>
-                Ich über mich
-                <sup>
-                  <FormatQuote sx={{ rotate: "180deg", fontSize: "15px" }} />
-                </sup>
-              </Typography>
-              <Typography
-                variant="subtitle1"
-                component="div"
-                sx={{ color: "text.secondary" }}
-              >
-                Maria Neuling
-              </Typography>
-            </CardContent>
-            <LinearProgress
-              variant="determinate"
-              value={progress}
-              sx={{ marginInline: "2vh" }}
-              color="info"
-            />
+      <Typography
+        color="secondary.main"
+        variant="h2"
+        sx={{
+          mb: 4,
+        }}
+      >
+        Über mich
+      </Typography>
+
+      <Box
+        sx={{
+          width: "100%",
+          paddingInline: "2vw",
+          display: isMobile() ? "flex" : "grid",
+          gridTemplateColumns: "1.25fr 0.75fr",
+          columnGap: 6,
+          alignItems: "start",
+          flexDirection: "column",
+        }}
+      >
+        <Box>
+          <Card
+            sx={{
+              display: "flex",
+              width: isMobile() ? "100%" : "50%",
+              marginInline: "auto",
+            }}
+          >
             <Box
               sx={{
                 display: "flex",
-                flexDirection: "row",
-                justifyContent: "space-evenly",
+                flexDirection: "column",
+                flex: 1,
               }}
             >
-              <IconButton onClick={toStartAudio}>
-                <SkipPrevious fontSize="large" />
-              </IconButton>
+              <CardContent sx={{ flex: "1 0 auto" }}>
+                <Typography component="div" variant="h5">
+                  <sub>
+                    <FormatQuote sx={{ fontSize: "15px" }} />
+                  </sub>
+                  Ich über mich
+                  <sup>
+                    <FormatQuote
+                      sx={{
+                        rotate: "180deg",
+                        fontSize: "15px",
+                      }}
+                    />
+                  </sup>
+                </Typography>
 
-              <IconButton
-                color={playing ? "info" : "default"}
-                onClick={() => {
-                  playing ? pauseAudio() : playAudio();
+                <Typography
+                  variant="subtitle1"
+                  component="div"
+                  sx={{ color: "text.secondary" }}
+                >
+                  Maria Neuling
+                </Typography>
+              </CardContent>
+
+              <LinearProgress
+                variant="determinate"
+                value={progress}
+                sx={{
+                  marginInline: "2vh",
+                }}
+                color="info"
+              />
+
+              <Box
+                sx={{
+                  display: "flex",
+                  justifyContent: "space-evenly",
                 }}
               >
-                {playing ? (
-                  <Pause fontSize="large" />
-                ) : (
-                  <PlayArrow fontSize="large" />
-                )}
-              </IconButton>
+                <IconButton onClick={toStartAudio}>
+                  <SkipPrevious fontSize="large" />
+                </IconButton>
 
-              <IconButton
-                onClick={toggleMute}
-                color={muted ? "default" : "info"}
-              >
-                {muted ? (
-                  <VolumeOff fontSize="large" />
-                ) : (
-                  <VolumeUp fontSize="large" />
-                )}
-              </IconButton>
+                <IconButton
+                  color={playing ? "info" : "default"}
+                  onClick={() => {
+                    playing ? pauseAudio() : playAudio();
+                  }}
+                >
+                  {playing ? (
+                    <Pause fontSize="large" />
+                  ) : (
+                    <PlayArrow fontSize="large" />
+                  )}
+                </IconButton>
 
-              <audio
-                src={introAudio}
-                ref={audioRef}
-                onTimeUpdate={getAudioProgress}
-              />
+                <IconButton
+                  onClick={toggleMute}
+                  color={muted ? "default" : "info"}
+                >
+                  {muted ? (
+                    <VolumeOff fontSize="large" />
+                  ) : (
+                    <VolumeUp fontSize="large" />
+                  )}
+                </IconButton>
+
+                <audio
+                  src={introAudio}
+                  ref={audioRef}
+                  onTimeUpdate={getAudioProgress}
+                />
+              </Box>
             </Box>
-          </Box>
-          <CardMedia component="img" sx={{ width: 151 }} image={fotoMama} />
-        </Card>
-      </div>
 
-      {isMobile() && <Lebenslauf />}
-      <Fortbildungen />
+            <CardMedia
+              component="img"
+              sx={{
+                width: 151,
+                objectFit: "cover",
+              }}
+              image={fotoMama}
+            />
+          </Card>
+
+          <Box sx={{ mt: 4 }}>
+            {isMobile() ? <Lebenslauf /> : <Fortbildungen />}
+          </Box>
+        </Box>
+
+        {isMobile() ? <Fortbildungen /> : <Lebenslauf />}
+
+        {isMobile() && (
+          <Box sx={{ mx: "5vw", mt: "2vh" }}>
+            <Accordion>
+              <AccordionSummary expandIcon={<ExpandMore />}>
+                <Typography color="secondary.main" variant="h5">
+                  Fachliche Vernetzungen
+                </Typography>
+              </AccordionSummary>
+
+              <AccordionDetails>
+                <FachlVernetzungen />
+              </AccordionDetails>
+            </Accordion>
+          </Box>
+        )}
+      </Box>
     </Box>
   );
 }

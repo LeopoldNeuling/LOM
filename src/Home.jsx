@@ -4,6 +4,7 @@ import Navigation from "./fragments/Navigation";
 import DiePraxis from "./pages/DiePraxis";
 import FuerWen from "./pages/FuerWen";
 import Kontakt from "./pages/Kontakt";
+import MobileKontakt from "./pages/mobile/Kontakt";
 import UeberMich from "./pages/UeberMich";
 import WasIstLom from "./pages/WasIstLom";
 import { isMobile } from "./helper/helperFunc";
@@ -92,7 +93,12 @@ export default function Home() {
         <UeberMich myRef={refs.about} />
         <Divider />
         <FuerWen myRef={refs.audience} />
-        <Kontakt myRef={refs.contact} />
+
+        {isMobile() ? (
+          <MobileKontakt myRef={refs.contact} />
+        ) : (
+          <Kontakt myRef={refs.contact} />
+        )}
       </Box>
     </>
   );
