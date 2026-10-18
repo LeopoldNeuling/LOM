@@ -9,6 +9,8 @@ import {
   DialogActions,
   DialogContent,
 } from "@mui/material";
+import { alpha } from "@mui/material/styles";
+
 import { isMobile } from "../helper/helperFunc";
 import { darkCol } from "../main";
 import foto1 from "../assets/roster/foto1.jpeg";
@@ -127,6 +129,12 @@ export default function WasIstLom({ myRef }) {
         position: "relative",
         justifyContent: "space-evenly",
         alignItems: "center",
+
+        margin: "5vh auto",
+        padding: "1vw",
+        borderRadius: "5px",
+
+        backgroundColor: "rgba(127, 93, 153, 0.2)",
       }}
     >
       {isMobile() ? (
