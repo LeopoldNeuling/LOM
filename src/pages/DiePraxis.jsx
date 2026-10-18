@@ -60,6 +60,8 @@ export default function DiePraxis({ myRef }) {
           "&>*": {
             maxWidth: isMobile() ? "100%" : "300px",
           },
+          paddingInline: "3vw",
+          paddingBottom: "2vh",
         }}
       >
         <Card

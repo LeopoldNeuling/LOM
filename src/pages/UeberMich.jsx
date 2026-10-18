@@ -38,7 +38,7 @@ const fontSize = "16px";
 function FachlVernetzungen() {
   return (
     <ul>
-      <li>tesetsdoivjasdoivjh</li>
+      <li>tesetsdoivjasdoivjhslfijsdfij sdpfijsdfsdfsdfdsfsd</li>
     </ul>
   );
 }
