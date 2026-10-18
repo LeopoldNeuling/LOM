@@ -36,9 +36,12 @@ const mobileLebensLaufFortb = isMobile()
 const fontSize = "16px";
 
 function FachlVernetzungen() {
+  // 2.3 -> Links
   return (
     <ul>
-      <li>tesetsdoivjasdoivjhslfijsdfij sdpfijsdfsdfsdfdsfsd</li>
+      <li>Teilnahme an regelmäßigen Supervisionen</li>
+      <li>Mitgliedschaft im LOM-Netzwerk Deutschland</li>
+      <li>Mitgliedschaft im DVE</li>
     </ul>
   );
 }
