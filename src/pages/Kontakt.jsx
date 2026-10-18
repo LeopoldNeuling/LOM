@@ -1,18 +1,8 @@
 import { Link } from "react-router-dom";
 import { Box, Typography } from "@mui/material";
-import { AlternateEmail, LocationPin, Phone } from "@mui/icons-material";
-import { isMobile } from "../helper/helperFunc";
 import praxis from "../assets/roster/foto12.jpeg";
 
 export default function Kontakt({ myRef }) {
-  const impressum = isMobile()
-    ? {}
-    : {
-        position: "absolute",
-        bottom: 0,
-        right: 0,
-      };
-
   return (
     <Box
       ref={myRef}
