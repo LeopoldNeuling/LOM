@@ -10,6 +10,7 @@ import {
   Accordion,
   AccordionSummary,
   AccordionDetails,
+  Button,
 } from "@mui/material";
 import {
   FormatQuote,
@@ -19,6 +20,7 @@ import {
   VolumeOff,
   VolumeUp,
   ExpandMore,
+  ArrowRightAlt,
 } from "@mui/icons-material";
 import fotoMama from "../assets/fotoMama2.jpg";
 import introAudio from "../assets/audios/intro.m4a";
@@ -32,6 +34,14 @@ const mobileLebensLaufFortb = isMobile()
   : {};
 
 const fontSize = "16px";
+
+function FachlVernetzungen() {
+  return (
+    <ul>
+      <li>tesetsdoivjasdoivjh</li>
+    </ul>
+  );
+}
 
 function Lebenslauf() {
   const entries = [
@@ -164,11 +174,27 @@ function Lebenslauf() {
 }
 
 function Fortbildungen() {
+  const [showFortbildungen, setShow] = useState(true);
   function Head() {
     return (
-      <Typography color="secondary.main" variant="h5">
-        Fortbildungen
-      </Typography>
+      <>
+        <Typography color="secondary.main" variant="h5">
+          {!isMobile() ? (
+            <>
+              {showFortbildungen ? "Fortbildungen" : "Fachliche Vernetzungen"}
+            </>
+          ) : (
+            "Fortbildungen"
+          )}
+        </Typography>
+
+        {!isMobile() && (
+          <Button onClick={() => setShow((prev) => !prev)} variant="contained">
+            <ArrowRightAlt />
+            {showFortbildungen ? "Fachl. Vernetzungen" : "Fortbildungen"}
+          </Button>
+        )}
+      </>
     );
   }
 
@@ -185,39 +211,38 @@ function Fortbildungen() {
                 }
           }
         >
-          <li>
-            Biografisches und kreatives Schreiben in unterschiedlichen
-            Lebensphasen und Lebenskrisen
-          </li>
-
-          <li>Dialektisch Behaviorale Therapie (Einführung und Vertiefung)</li>
-
-          <li>Achtsamkeitstraining MBSR (Mindful Based Stress Reduction)</li>
-
-          <li>Umgang mit Depressionen</li>
-
-          <li>Umgang mit Angstpatienten</li>
-
-          <li>Open Dialogue (Zusatzqualifikation)</li>
-
-          <li>
-            Motivational Interviewing bei Menschen mit substanzbezogenen
-            Störungen
-          </li>
-
-          <li>Kränkbarkeit und Kränkung bei narzisstischen Persönlichkeiten</li>
-
-          <li>Scham - die tabuisierte Emotion</li>
-
-          <li>Das neue Bundesteilhabegesetz</li>
-
-          <li>Wege in den Beruf nach einer psychischen Erkrankung</li>
-
-          <li>Basiswissen Psychopharmakologie</li>
-
-          <li>Rechtsgrundlagen zur Teilhabe am Arbeitsleben</li>
-
-          <li>Hamet 3</li>
+          {showFortbildungen ? (
+            <>
+              <li>
+                Biografisches und kreatives Schreiben in unterschiedlichen
+                Lebensphasen und Lebenskrisen
+              </li>
+              <li>
+                Dialektisch Behaviorale Therapie (Einführung und Vertiefung)
+              </li>
+              <li>
+                Achtsamkeitstraining MBSR (Mindful Based Stress Reduction)
+              </li>
+              <li>Umgang mit Depressionen</li>
+              <li>Umgang mit Angstpatienten</li>
+              <li>Open Dialogue (Zusatzqualifikation)</li>
+              <li>
+                Motivational Interviewing bei Menschen mit substanzbezogenen
+                Störungen
+              </li>
+              <li>
+                Kränkbarkeit und Kränkung bei narzisstischen Persönlichkeiten
+              </li>
+              <li>Scham - die tabuisierte Emotion</li>
+              <li>Das neue Bundesteilhabegesetz</li>
+              <li>Wege in den Beruf nach einer psychischen Erkrankung</li>
+              <li>Basiswissen Psychopharmakologie</li>
+              <li>Rechtsgrundlagen zur Teilhabe am Arbeitsleben</li>
+              <li>Hamet 3</li>
+            </>
+          ) : (
+            <FachlVernetzungen />
+          )}
         </ul>
       </div>
     );
@@ -421,6 +446,22 @@ export default function UeberMich({ myRef }) {
         </Box>
 
         {isMobile() ? <Fortbildungen /> : <Lebenslauf />}
+
+        {isMobile() && (
+          <Box sx={{ mx: "5vw", mt: "2vh" }}>
+            <Accordion>
+              <AccordionSummary expandIcon={<ExpandMore />}>
+                <Typography color="secondary.main" variant="h5">
+                  Fachliche Vernetzungen
+                </Typography>
+              </AccordionSummary>
+
+              <AccordionDetails>
+                <FachlVernetzungen />
+              </AccordionDetails>
+            </Accordion>
+          </Box>
+        )}
       </Box>
     </Box>
   );
