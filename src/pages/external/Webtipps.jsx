@@ -50,16 +50,18 @@ const links = [
     title: "Julia Gustavus: Coaching mit und ohne Pferd",
     url: "https://juliagustavus.com",
     imgSrc: "https://juliagustavus.com/img/logo-farbe.png",
-  },{
-    title: "Tränenreich-Laden und Werkstatt für Trauernde und Trostende",
-    url: "https://www.traenenreich-potsdam.de/",
-    imgSrc: "https://www.traenenreich-potsdam.de/wp-content/uploads/go-x/u/75cac67c-9ec3-4bee-8faf-73fcd6bccf1f/l7,t0,w857,h480/image.jpg",
   },
   {
     title: "Tränenreich-Laden und Werkstatt für Trauernde und Trostende",
     url: "https://www.traenenreich-potsdam.de/",
     imgSrc:
       "https://www.traenenreich-potsdam.de/wp-content/uploads/go-x/u/75cac67c-9ec3-4bee-8faf-73fcd6bccf1f/l7,t0,w857,h480/image.jpg",
+  },
+  {
+    title: "PIBB Psychiatrie Initiative Berlin Brandenburg",
+    url: "https://www.pi-bb.de/",
+    imgSrc:
+      "https://www.pi-bb.de/neuwp/wp-content/uploads/PIBB_Logo_Header.png",
   },
 ];
 

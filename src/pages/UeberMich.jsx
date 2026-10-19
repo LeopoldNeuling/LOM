@@ -39,6 +39,15 @@ function FachlVernetzungen() {
   // 2.3 -> Links
   return (
     <ul>
+      <li>
+        <a
+          href="https://www.pi-bb.de"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Kooperationspartnerschaft PIBB, Ambulante Komplexbehandlung
+        </a>
+      </li>
       <li>Teilnahme an regelmäßigen Supervisionen</li>
       <li>Mitgliedschaft im LOM-Netzwerk Deutschland</li>
       <li>Mitgliedschaft im DVE</li>
