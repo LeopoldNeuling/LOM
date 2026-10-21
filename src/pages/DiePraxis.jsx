@@ -26,7 +26,7 @@ export default function DiePraxis({ myRef }) {
 
         textAlign: "center",
         backgroundImage: `linear-gradient(rgba(255,255,255,0.25), rgba(255,255,255,0.25)), url(${meerNeu})`,
-        paddingTop: isMobile() ? "5vh" : 0,
+        paddingTop: "5vh",
       }}
     >
       <Typography
