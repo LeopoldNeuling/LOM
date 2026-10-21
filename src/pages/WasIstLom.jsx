@@ -130,11 +130,7 @@ export default function WasIstLom({ myRef }) {
         justifyContent: "space-evenly",
         alignItems: "center",
 
-        margin: "5vh auto",
-        padding: "1vw",
-        borderRadius: "5px",
-
-        backgroundColor: "rgba(127, 93, 153, 0.2)",
+        backgroundColor: "var(--water-col)",
       }}
     >
       {isMobile() ? (

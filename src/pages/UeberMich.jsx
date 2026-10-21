@@ -40,6 +40,26 @@ function FachlVernetzungen() {
   return (
     <ul>
       <li>
+        Mitgliedschaft im{" "}
+        <a
+          href="https://www.dve.info"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Deutscher Verband Ergotherapie
+        </a>
+      </li>
+      <li>
+        Mitgliedschaft im{" "}
+        <a
+          href="https://lom-international.org/de/home"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          LOM-Netzwerk Deutschland
+        </a>
+      </li>
+      <li>
         <a
           href="https://www.pi-bb.de"
           target="_blank"
@@ -49,8 +69,6 @@ function FachlVernetzungen() {
         </a>
       </li>
       <li>Teilnahme an regelmäßigen Supervisionen</li>
-      <li>Mitgliedschaft im LOM-Netzwerk Deutschland</li>
-      <li>Mitgliedschaft im DVE</li>
     </ul>
   );
 }
@@ -327,7 +345,8 @@ export default function UeberMich({ myRef }) {
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
-        width: "100%",
+        width: "95%",
+        backgroundColor: "var(--sky-col)",
       }}
     >
       <Typography

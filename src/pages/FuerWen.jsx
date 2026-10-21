@@ -18,7 +18,7 @@ export default function FuerWen({ myRef }) {
       id="fuerWen"
       className={`${isMobile() ? "mobile-page mobile-content-page" : "page content-page"} text-align-center`}
       sx={{
-        margin: "2vh auto",
+        backgroundColor: "var(--water-col)",
       }}
     >
       <Typography

@@ -1,5 +1,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
 
+:root {
+  --opacity-col: 0.2;
+  --sky-col: rgba(215, 228, 235, 1);
+  --water-col: rgba(18, 85, 181, var(--opacity-col));
+}
+
 * {
   font-family: "Montserrat", sans-serif;
 }
@@ -7,6 +13,9 @@
 .page {
   min-height: 400px;
   scroll-margin-top: 10vh;
+  margin-inline: 2.5vw;
+  border-radius: 5px;
+  padding: 2vw;
 }
 .mobile-page {
   min-height: 400px;
