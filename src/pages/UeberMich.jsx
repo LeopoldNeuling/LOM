@@ -41,6 +41,7 @@ function FachlVernetzungen() {
     <ul>
       <li>
         <a
+          style={{ color: "inherit" }}
           href="https://www.pi-bb.de"
           target="_blank"
           rel="noopener noreferrer"
@@ -51,6 +52,7 @@ function FachlVernetzungen() {
       <li>
         Mitgliedschaft{" "}
         <a
+          style={{ color: "inherit" }}
           href="https://lom-international.org/de/home"
           target="_blank"
           rel="noopener noreferrer"
@@ -61,6 +63,7 @@ function FachlVernetzungen() {
       <li>
         Mitgliedschaft{" "}
         <a
+          style={{ color: "inherit" }}
           href="https://www.dve.info"
           target="_blank"
           rel="noopener noreferrer"

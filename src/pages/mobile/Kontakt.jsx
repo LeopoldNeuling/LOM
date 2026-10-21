@@ -14,30 +14,38 @@ export default function Kontakt({ myRef }) {
         display: "flex",
         flexDirection: "column",
         justifyContent: "center",
-        alignItems: "center",
+        alignItems: "space-evenly",
         width: "100%",
         gap: "5vh 0",
 
         paddingInline: "1vw",
+
+        "&>div": { display: "grid", placeItems: "center" },
+        "&>div>*": { color: "inherit" },
       }}
     >
       <Typography variant="h6" color="secondary.main" textAlign="center">
         Praxis für Ergotherapie und Lösungorientiertes Malen® <br />
-        <br />
-        Maria Neuling <br /> Ergotherapeutin (B.Sc.)
+        Maria Neuling Ergotherapeutin (B.Sc.)
       </Typography>
-      <a
-        href="https://maps.app.goo.gl/22NJAR8yqV8RE15r6"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        Berlepschstraße 2, 14165 Berlin
-      </a>
-      <a href="tel:015757236000">0157 57 236 000</a>
-      <a href="mailto:info@ergo-lom.de">info@ergo-lom.de</a>
-      <Link to="/impressum">Impressum</Link>
-      <Link to="/daten">Datenschutzerklärung</Link>
-      <Link to="/links">Interessante Links</Link>
+      <div style={{ height: "20vh" }}></div>
+
+      <div>
+        <a
+          href="https://maps.app.goo.gl/22NJAR8yqV8RE15r6"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Berlepschstraße 2, 14165 Berlin
+        </a>
+        <a href="tel:015757236000">0157 57 236 000</a>
+        <a href="mailto:info@ergo-lom.de">info@ergo-lom.de</a>
+      </div>
+      <div>
+        <Link to="/impressum">Impressum</Link>
+        <Link to="/daten">Datenschutzerklärung</Link>
+        <Link to="/links">Interessante Links</Link>
+      </div>
     </Box>
   );
 }

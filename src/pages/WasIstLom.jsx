@@ -151,7 +151,12 @@ export default function WasIstLom({ myRef }) {
         </div>
       )}
 
-      <Card sx={{ margin: "2vw", marginRight: 0 }}>
+      <Card
+        sx={{
+          margin: "2vw",
+          marginRight: 0,
+        }}
+      >
         <CardContent>
           <Typography
             variant="subtitle"
@@ -181,8 +186,9 @@ export default function WasIstLom({ myRef }) {
             <p></p>
             Im ergotherapeutischen Prozess wird zunächst das individuelle
             Anliegen sorgfältig exploriert und geklärt.
-            <br /> In langsamem Tempo mit liebevoller Aufmerksamkeit entstehen
-            klare, einfache und eindeutige Bilder.
+            <br />
+            In langsamem Tempo mit liebevoller Aufmerksamkeit entstehen klare,
+            einfache und eindeutige Bilder.
             <p></p>
             Das Verfahren eignet sich für alle Menschen mit psychischen und
             psychosomatischen Belastungsfaktoren, die sich Veränderung und
