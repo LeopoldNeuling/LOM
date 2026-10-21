@@ -40,7 +40,7 @@ export default function Kontakt({ myRef }) {
         >
           <Typography variant="subtitle1" color="primary.main">
             <div>
-              Praxis für Ergotherapie und Lösungorientiertes Malen®, Maria
+              Praxis für Ergotherapie und Lösungorientiertes Malen® Maria
               Neuling, Ergotherapeutin (B.Sc.)
             </div>
             <a

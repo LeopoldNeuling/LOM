@@ -8,8 +8,9 @@ import {
   Dialog,
   DialogActions,
   DialogContent,
+  Card,
+  CardContent,
 } from "@mui/material";
-import { alpha } from "@mui/material/styles";
 
 import { isMobile } from "../helper/helperFunc";
 import { darkCol } from "../main";
@@ -150,40 +151,45 @@ export default function WasIstLom({ myRef }) {
         </div>
       )}
 
-      <Typography
-        variant="subtitle"
-        color="secondary.main"
-        maxWidth={isMobile() ? "80vw" : "30vw"}
-        textAlign={"left"}
-        lineHeight={1.55}
-      >
-        LOM® fördert die seelische Gesundheit und wirkt sich positiv auf
-        Stresslevel und Belastungen aus. Neue Perspektiven auf festgefahrene,
-        scheinbar „unlösbare“ Probleme werden gefördert.
-        <p></p>
-        Das Lösungsorientierte Malen wirkt emotionsregulierend durch den
-        Eindruck, den die Bilder auf die Malenden machen. Es geht darum,
-        Störendes durch störungsfreie Bilder im Gehirn zu ersetzen und dabei
-        auftauchende Gefühle und Themen mit einfachen Bildern zu versorgen und
-        zu würdigen. Die malende Person wählt ein persönliches Thema, das
-        belastende Emotionen verursacht.
-        <p></p>
-        Auf diese Weise können Symptome, Wünsche, Beziehungen, Entscheidungen,
-        Kognitionen und Traumafolgestörungen bearbeitet werden.
-        <p></p>
-        Das Therapieverfahren von Bettina Egger und Jörg Merz basiert auf
-        Erkenntnissen aus der Hirnforschung und ist durch wissenschaftliche
-        Studien belegt.
-        <p></p>
-        Im ergotherapeutischen Prozess wird zunächst das individuelle Anliegen
-        sorgfältig exploriert und geklärt.
-        <br /> In langsamem Tempo mit liebevoller Aufmerksamkeit entstehen
-        klare, einfache und eindeutige Bilder.
-        <p></p>
-        Das Verfahren eignet sich für alle Menschen mit psychischen und
-        psychosomatischen Belastungsfaktoren, die sich Veränderung und Klärung
-        wünschen.
-      </Typography>
+      <Card sx={{ margin: "2vw", marginRight: 0 }}>
+        <CardContent>
+          <Typography
+            variant="subtitle"
+            color="secondary.main"
+            maxWidth={isMobile() ? "80vw" : "30vw"}
+            textAlign={"left"}
+            lineHeight={1.55}
+          >
+            LOM® fördert die seelische Gesundheit und wirkt sich positiv auf
+            Stresslevel und Belastungen aus. Neue Perspektiven auf
+            festgefahrene, scheinbar „unlösbare“ Probleme werden gefördert.
+            <p></p>
+            Das Lösungsorientierte Malen wirkt emotionsregulierend durch den
+            Eindruck, den die Bilder auf die Malenden machen. Es geht darum,
+            Störendes durch störungsfreie Bilder im Gehirn zu ersetzen und dabei
+            auftauchende Gefühle und Themen mit einfachen Bildern zu versorgen
+            und zu würdigen. Die malende Person wählt ein persönliches Thema,
+            das belastende Emotionen verursacht.
+            <p></p>
+            Auf diese Weise können Symptome, Wünsche, Beziehungen,
+            Entscheidungen, Kognitionen und Traumafolgestörungen bearbeitet
+            werden.
+            <p></p>
+            Das Therapieverfahren von Bettina Egger und Jörg Merz basiert auf
+            Erkenntnissen aus der Hirnforschung und ist durch wissenschaftliche
+            Studien belegt.
+            <p></p>
+            Im ergotherapeutischen Prozess wird zunächst das individuelle
+            Anliegen sorgfältig exploriert und geklärt.
+            <br /> In langsamem Tempo mit liebevoller Aufmerksamkeit entstehen
+            klare, einfache und eindeutige Bilder.
+            <p></p>
+            Das Verfahren eignet sich für alle Menschen mit psychischen und
+            psychosomatischen Belastungsfaktoren, die sich Veränderung und
+            Klärung wünschen.
+          </Typography>
+        </CardContent>
+      </Card>
     </Box>
   );
 }

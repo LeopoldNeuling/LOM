@@ -40,17 +40,16 @@ function FachlVernetzungen() {
   return (
     <ul>
       <li>
-        Mitgliedschaft im{" "}
         <a
-          href="https://www.dve.info"
+          href="https://www.pi-bb.de"
           target="_blank"
           rel="noopener noreferrer"
         >
-          Deutscher Verband Ergotherapie
+          Kooperationspartnerschaft PIBB, Ambulante Komplexbehandlung
         </a>
       </li>
       <li>
-        Mitgliedschaft im{" "}
+        Mitgliedschaft{" "}
         <a
           href="https://lom-international.org/de/home"
           target="_blank"
@@ -60,12 +59,13 @@ function FachlVernetzungen() {
         </a>
       </li>
       <li>
+        Mitgliedschaft{" "}
         <a
-          href="https://www.pi-bb.de"
+          href="https://www.dve.info"
           target="_blank"
           rel="noopener noreferrer"
         >
-          Kooperationspartnerschaft PIBB, Ambulante Komplexbehandlung
+          Deutscher Verband Ergotherapie
         </a>
       </li>
       <li>Teilnahme an regelmäßigen Supervisionen</li>
@@ -346,7 +346,7 @@ export default function UeberMich({ myRef }) {
         flexDirection: "column",
         alignItems: "center",
         width: "95%",
-        backgroundColor: `${isMobile() ? "transparent" : "var(--sky-col)"}`,
+        backgroundColor: `${isMobile() ? "transparent" : "#ddd"}`,
       }}
     >
       <Typography
@@ -387,18 +387,7 @@ export default function UeberMich({ myRef }) {
             >
               <CardContent sx={{ flex: "1 0 auto" }}>
                 <Typography component="div" variant="h5">
-                  <sub>
-                    <FormatQuote sx={{ fontSize: "15px" }} />
-                  </sub>
-                  Ich über mich
-                  <sup>
-                    <FormatQuote
-                      sx={{
-                        rotate: "180deg",
-                        fontSize: "15px",
-                      }}
-                    />
-                  </sup>
+                  <i>Ich über mich</i>
                 </Typography>
 
                 <Typography

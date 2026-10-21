@@ -2,7 +2,7 @@
 
 :root {
   --opacity-col: 0.2;
-  --sky-col: rgba(215, 228, 235, 1);
+  --sky-col: rgba(215, 228, 235, var(--opacity-col));
   --water-col: rgba(18, 85, 181, var(--opacity-col));
 }
 

@@ -43,69 +43,73 @@ export default function FuerWen({ myRef }) {
         }}
       >
         <Card>
-          <CardActionArea>
-            <CardMedia component="img" height="250" image={quad} />
-            <CardContent>
-              <Typography
-                variant="subtitle1"
-                color="secondary.main"
-                textAlign="left"
-              >
-                <div>
-                  Das Verfahren eignet sich für alle Menschen mit psychischen
-                  und psychosomatischen Belastungsfaktoren, die sich Veränderung
-                  und Klärung wünschen.
-                </div>
-              </Typography>
-            </CardContent>
-          </CardActionArea>
-        </Card>
-        <Card>
-          <CardActionArea>
-            <CardMedia component="img" height="250" image={circle} />
-            <CardContent>
-              <Typography
-                variant="subtitle1"
-                color="secondary.main"
-                textAlign="left"
-              >
+          <CardMedia component="img" height="250" image={quad} />
+          <CardContent>
+            <Typography
+              variant="subtitle1"
+              color="secondary.main"
+              textAlign="left"
+            >
+              <div>
+                Das Verfahren eignet sich für alle Menschen mit psychischen und
+                psychosomatischen Belastungsfaktoren, die sich Veränderung und
+                Klärung wünschen.
+                <br />
+                Inbesondere bei:
                 <ul>
-                  <li>
-                    Im Rahmen der Ergotherapie werden die Behandlungskosten von
-                    den gesetzlichen und privaten Krankenkassen übernommen.
-                  </li>
-                  <li>
-                    Voraussetzung ist eine ärztliche oder psychotherapeutische
-                    Heilmittelverordnung für die Ergotherapie
-                    (psychisch-funktionelles Behandlungsgebiet).
-                  </li>
-                  <li>
-                    Dieses Heilmittel kann von Ärzt:innen und
-                    Psychotherapeut:innen verordnet werden.
-                  </li>
+                  <li>Depressionen</li>
+                  <li>Angst- und Panikstörungen</li>
+                  <li>Suchterkrankungen</li>
+                  <li>Zwangserkrankungen</li>
+                  <li>Chronischen Schmerzen</li>
+                  <li>Traumafolgestörungen</li>
                 </ul>
-              </Typography>
-            </CardContent>
-          </CardActionArea>
+              </div>
+            </Typography>
+          </CardContent>
         </Card>
         <Card>
-          <CardActionArea>
-            <CardMedia component="img" height="250" image={tri} />
-            <CardContent>
-              <Typography
-                variant="subtitle1"
-                color="secondary.main"
-                textAlign="left"
-              >
-                <div>
-                  Information für Ärztinnen und Ärzte: Erfolgt die
-                  Heilmittelverordnung als sog. Blankoverordnung, wird diese
-                  nicht in die Wirtschaftlichkeitsvorgaben gerechnet.
-                  Blankoverordnungen sind somit „budgetneutral“.
-                </div>
-              </Typography>
-            </CardContent>
-          </CardActionArea>
+          <CardMedia component="img" height="250" image={circle} />
+          <CardContent>
+            <Typography
+              variant="subtitle1"
+              color="secondary.main"
+              textAlign="left"
+            >
+              <ul>
+                <li>
+                  Im Rahmen der Ergotherapie werden die Behandlungskosten von
+                  den gesetzlichen und privaten Krankenkassen übernommen.
+                </li>
+                <li>
+                  Voraussetzung ist eine ärztliche oder psychotherapeutische
+                  Heilmittelverordnung für die Ergotherapie
+                  (psychisch-funktionelles Behandlungsgebiet).
+                </li>
+                <li>
+                  Dieses Heilmittel kann von Ärzt:innen und
+                  Psychotherapeut:innen verordnet werden.
+                </li>
+              </ul>
+            </Typography>
+          </CardContent>
+        </Card>
+        <Card>
+          <CardMedia component="img" height="250" image={tri} />
+          <CardContent>
+            <Typography
+              variant="subtitle1"
+              color="secondary.main"
+              textAlign="left"
+            >
+              <div>
+                Information für Ärztinnen und Ärzte: Erfolgt die
+                Heilmittelverordnung als sog. Blankoverordnung, wird diese nicht
+                in die Wirtschaftlichkeitsvorgaben gerechnet. Blankoverordnungen
+                sind somit „budgetneutral“.
+              </div>
+            </Typography>
+          </CardContent>
         </Card>
       </Box>
     </Box>

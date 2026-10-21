@@ -86,14 +86,12 @@ export default function Home() {
         >
           <Menu />
         </IconButton>
-
         <DiePraxis myRef={refs.praxis} />
         <WasIstLom myRef={refs.lom} />
         <Divider />
         <UeberMich myRef={refs.about} />
         <Divider />
         <FuerWen myRef={refs.audience} />
-
         {isMobile() ? (
           <MobileKontakt myRef={refs.contact} />
         ) : (

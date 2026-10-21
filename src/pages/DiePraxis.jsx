@@ -59,6 +59,9 @@ export default function DiePraxis({ myRef }) {
           gap: "2vh",
           "&>*": {
             maxWidth: isMobile() ? "100%" : "300px",
+            minHeight: "25vh",
+            display: "grid",
+            placeItems: "center",
           },
           paddingInline: "3vw",
           paddingBottom: "2vh",
@@ -82,11 +85,11 @@ export default function DiePraxis({ myRef }) {
 
         <Card
           sx={{
-            backgroundColor: `rgba(208,138,33,${cardOpacity})`,
+            backgroundColor: `rgba(255, 203, 61, ${cardOpacity})`,
           }}
         >
           <CardContent>
-            <Typography variant="subtitle1" color="primary.main">
+            <Typography variant="subtitle1" color="secondary.main">
               <b>
                 Ein Schwerpunkt liegt auf nonverbalen Therapieverfahren wie dem
                 Lösungsorientierten Malen (LOM®).
@@ -97,7 +100,7 @@ export default function DiePraxis({ myRef }) {
 
         <Card
           sx={{
-            backgroundColor: `rgba(201,176,191,${cardOpacity + 0.1})`,
+            backgroundColor: `rgba(53,86,111,${cardOpacity})`,
           }}
         >
           <CardContent>

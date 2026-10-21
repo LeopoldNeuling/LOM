@@ -12,6 +12,12 @@ import { useEffect } from "react";
 
 const links = [
   {
+    title: "PIBB Psychiatrie Initiative Berlin Brandenburg",
+    url: "https://www.pi-bb.de/",
+    imgSrc:
+      "https://www.pi-bb.de/neuwp/wp-content/uploads/PIBB_Logo_Header.png",
+  },
+  {
     title: "LOM International",
     url: "https://lom-international.org/de/home",
     imgSrc:
@@ -47,21 +53,15 @@ const links = [
       "https://maycarrocabaleiro.com/wp-content/uploads/2020/04/logo-may-web-GOLD-450.png",
   },
   {
-    title: "Julia Gustavus: Coaching mit und ohne Pferd",
+    title: "Julia Gustavus:<br> Coaching mit und ohne Pferd",
     url: "https://juliagustavus.com",
     imgSrc: "https://juliagustavus.com/img/logo-farbe.png",
   },
   {
-    title: "Tränenreich-Laden und Werkstatt für Trauernde und Trostende",
+    title: "Tränenreich-Laden und Werkstatt für Trauernde und Tröstende",
     url: "https://www.traenenreich-potsdam.de/",
     imgSrc:
       "https://www.traenenreich-potsdam.de/wp-content/uploads/go-x/u/75cac67c-9ec3-4bee-8faf-73fcd6bccf1f/l7,t0,w857,h480/image.jpg",
-  },
-  {
-    title: "PIBB Psychiatrie Initiative Berlin Brandenburg",
-    url: "https://www.pi-bb.de/",
-    imgSrc:
-      "https://www.pi-bb.de/neuwp/wp-content/uploads/PIBB_Logo_Header.png",
   },
 ];
 
@@ -95,12 +95,11 @@ export default function Webtipps() {
                   component="img"
                   height="140"
                   image={link.imgSrc}
-                  alt={link.title}
                   sx={{ objectFit: "contain", p: 2 }}
                 />
                 <CardContent>
                   <Typography variant="h6" align="center">
-                    {link.title}
+                    <div dangerouslySetInnerHTML={{ __html: link.title }} />
                   </Typography>
                 </CardContent>
               </a>
