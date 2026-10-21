@@ -346,7 +346,7 @@ export default function UeberMich({ myRef }) {
         flexDirection: "column",
         alignItems: "center",
         width: "95%",
-        backgroundColor: "var(--sky-col)",
+        backgroundColor: `${isMobile() ? "transparent" : "var(--sky-col)"}`,
       }}
     >
       <Typography

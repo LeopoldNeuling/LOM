@@ -131,6 +131,7 @@ export default function WasIstLom({ myRef }) {
         alignItems: "center",
 
         backgroundColor: "var(--water-col)",
+        paddingBlock: isMobile() ? "2vh" : 0,
       }}
     >
       {isMobile() ? (
